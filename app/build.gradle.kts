@@ -46,4 +46,5 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation("net.sourceforge.jexcelapi:jxl:2.6.12")
     implementation("org.apache.commons:commons-lang3:3.14.0")
+    implementation("com.adjust.sdk:adjust-android:4.38.0")
 }

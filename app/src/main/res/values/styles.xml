@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BottomSheetDialogStyle" parent="@style/Theme.Design.Light.BottomSheetDialog">
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="android:drawable">@android:color/transparent</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay</item>
+    </style>
+    <style name="ShapeAppearanceOverlay" />
+    <style name="ShapeAppearanceOverlay.BottomLeftDifferentCornerSize" parent="@style/ShapeAppearanceOverlay">
+        <item name="cornerSizeBottomLeft">20.0px</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.BottomRightCut" parent="@style/ShapeAppearanceOverlay">
+        <item name="cornerFamilyBottomRight">cut</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.Cut" parent="@style/ShapeAppearanceOverlay">
+        <item name="cornerFamily">cut</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.DifferentCornerSize" parent="@style/ShapeAppearanceOverlay">
+        <item name="cornerSize">20.0px</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.Material3.Button" parent="">
+        <item name="cornerSize">50.0%</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.Material3.Chip" parent="">
+        <item name="cornerSize">8.0dip</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.Material3.FloatingActionButton" parent="">
+        <item name="cornerSize">@dimen/m3_fab_corner_size</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.Material3.NavigationView.Item" parent="">
+        <item name="cornerSize">50.0%</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.Material3.TextField.Filled" parent="@style/ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerSizeBottomLeft">0.0dip</item>
+        <item name="cornerSizeBottomRight">0.0dip</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.MaterialAlertDialog.Material3" parent="">
+        <item name="cornerSize">@dimen/m3_alert_dialog_corner_size</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.MaterialComponents.BottomSheet" parent="">
+        <item name="cornerSizeBottomLeft">0.0dip</item>
+        <item name="cornerSizeBottomRight">0.0dip</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.MaterialComponents.Chip" parent="">
+        <item name="cornerSize">50.0%</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.MaterialComponents.ExtendedFloatingActionButton" parent="">
+        <item name="cornerSize">@null</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.MaterialComponents.FloatingActionButton" parent="">
+        <item name="cornerSize">50.0%</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.MaterialComponents.MaterialCalendar.Day" parent="">
+        <item name="cornerSize">@dimen/mtrl_calendar_day_corner</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.MaterialComponents.MaterialCalendar.Window.Fullscreen" parent="">
+        <item name="cornerSize">0.0dip</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.MaterialComponents.MaterialCalendar.Year" parent="">
+        <item name="cornerSize">@dimen/mtrl_calendar_year_corner</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.MaterialComponents.TextInputLayout.FilledBox" parent="">
+        <item name="cornerSizeBottomLeft">@dimen/mtrl_textinput_box_corner_radius_small</item>
+        <item name="cornerSizeBottomRight">@dimen/mtrl_textinput_box_corner_radius_small</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.TopLeftCut" parent="@style/ShapeAppearanceOverlay">
+        <item name="cornerFamilyTopLeft">cut</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.TopRightDifferentCornerSize" parent="@style/ShapeAppearanceOverlay">
+        <item name="cornerSizeTopRight">20.0px</item>
+    </style>
+</resources>
