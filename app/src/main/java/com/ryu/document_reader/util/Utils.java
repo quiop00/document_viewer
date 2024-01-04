@@ -20,6 +20,9 @@ import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.adjust.sdk.Adjust;
+import com.adjust.sdk.AdjustAdRevenue;
+
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -425,6 +428,13 @@ public final class Utils {
         } finally {
             closeSafe(outputStream1);
         }
+    }
+
+    public final void setTrackRevenueByAdjust(long paramLong, String paramString) {
+        Intrinsics.checkNotNullParameter(paramString, "currency");
+        AdjustAdRevenue adjustAdRevenue = new AdjustAdRevenue("admob_sdk");
+        adjustAdRevenue.setRevenue(Double.valueOf(((float)paramLong / 1000000.0F)), paramString);
+        Adjust.trackAdRevenue(adjustAdRevenue);
     }
 
 }

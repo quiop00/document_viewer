@@ -47,4 +47,9 @@ dependencies {
     implementation("net.sourceforge.jexcelapi:jxl:2.6.12")
     implementation("org.apache.commons:commons-lang3:3.14.0")
     implementation("com.adjust.sdk:adjust-android:4.38.0")
+    implementation("com.google.android.gms:play-services-ads:22.6.0")
+    implementation("com.elyeproj.libraries:loaderviewlibrary:2.0.0")
+    implementation("io.github.elye:loaderviewlibrary:3.0.0")
+    implementation("com.android.billingclient:billing:6.1.0")
+    implementation("androidx.lifecycle:lifecycle-process:2.6.2")
 }
