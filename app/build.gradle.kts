@@ -52,4 +52,14 @@ dependencies {
     implementation("io.github.elye:loaderviewlibrary:3.0.0")
     implementation("com.android.billingclient:billing:6.1.0")
     implementation("androidx.lifecycle:lifecycle-process:2.6.2")
+
+    implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
+
+    // Add the dependencies for the Remote Config and Analytics libraries
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation("com.google.firebase:firebase-config")
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.ironsource.sdk:mediationsdk:7.7.0")
+    // ironSource Ad Quality SDK
+    implementation("com.ironsource:adqualitysdk:7.14.3")
 }

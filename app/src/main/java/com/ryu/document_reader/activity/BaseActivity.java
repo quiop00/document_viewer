@@ -60,33 +60,34 @@ public class BaseActivity extends AppCompatActivity {
         Context context = getApplicationContext();
         Intrinsics.checkNotNullExpressionValue(context, "applicationContext");
         int i = utils.getNumberBackApp(context);
-        if (this instanceof com.ryu.document_reader.activity.listfile.ListFileActivity) {
-            setResult(-1, new Intent());
-            finish();
-        } else {
-            Utils utils1 = Utils.INSTANCE;
-            Context context1 = getApplicationContext();
-            Intrinsics.checkNotNullExpressionValue(context1, "applicationContext");
-            if (!utils1.isRating(context1)) {
-                if (this.mIsView) {
-                    if ((i == 3 || i == 5 || i == 7) && isFirstView) {
-                        isFirstView = false;
-                        DialogKt.showRatingDialog(this);
-                    } else {
-                        setResult(-1, new Intent());
-                        finish();
-                    }
-                } else if (this instanceof com.alldoucment.reader.viewer.activity.home.HomeActivity2 && i == 1) {
-                    DialogKt.showRatingDialog(this);
-                } else {
-                    setResult(-1, new Intent());
-                    finish();
-                }
-            } else {
-                setResult(-1, new Intent());
-                finish();
-            }
-        }
+        // TODO fix
+//        if (this instanceof com.ryu.document_reader.activity.listfile.ListFileActivity) {
+//            setResult(-1, new Intent());
+//            finish();
+//        } else {
+//            Utils utils1 = Utils.INSTANCE;
+//            Context context1 = getApplicationContext();
+//            Intrinsics.checkNotNullExpressionValue(context1, "applicationContext");
+//            if (!utils1.isRating(context1)) {
+//                if (this.mIsView) {
+//                    if ((i == 3 || i == 5 || i == 7) && isFirstView) {
+//                        isFirstView = false;
+//                        DialogKt.showRatingDialog(this);
+//                    } else {
+//                        setResult(-1, new Intent());
+//                        finish();
+//                    }
+//                } else if (this instanceof com.ryu.document_reader.activity.home.HomeActivity2 && i == 1) {
+//                    DialogKt.showRatingDialog(this);
+//                } else {
+//                    setResult(-1, new Intent());
+//                    finish();
+//                }
+//            } else {
+//                setResult(-1, new Intent());
+//                finish();
+//            }
+//        }
     }
 
     protected void onCreate(Bundle paramBundle) {

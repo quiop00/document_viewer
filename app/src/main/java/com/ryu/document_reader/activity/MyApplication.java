@@ -24,7 +24,7 @@ public class MyApplication extends Application {
         Companion companion = Companion;
         instance = this;
         try {
-            AppOpenManager appOpenManager = new AppOpenManager();
+            AppOpenManager appOpenManager = new AppOpenManager(this);
             companion.setAppOpenManager(appOpenManager);
             AdjustConfig adjustConfig = new AdjustConfig((Context)this, "orfbb28riby8", "production");
             adjustConfig.setLogLevel(LogLevel.VERBOSE);

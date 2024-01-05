@@ -6,6 +6,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
@@ -14,6 +15,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.View;
 import android.view.Window;
@@ -22,6 +24,7 @@ import android.widget.Toast;
 
 import com.adjust.sdk.Adjust;
 import com.adjust.sdk.AdjustAdRevenue;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.io.Closeable;
 import java.io.File;
@@ -430,11 +433,36 @@ public final class Utils {
         }
     }
 
+    public final void setTrackEvent(Context paramContext, String paramString1, String paramString2) {
+        Intrinsics.checkNotNullParameter(paramContext, "context");
+        Intrinsics.checkNotNullParameter(paramString1, "key");
+        Intrinsics.checkNotNullParameter(paramString2, "value");
+        Bundle bundle = new Bundle();
+        bundle.putString(paramString1, paramString2);
+        FirebaseAnalytics.getInstance(paramContext).logEvent(String.valueOf(paramString1), bundle);
+    }
+
     public final void setTrackRevenueByAdjust(long paramLong, String paramString) {
         Intrinsics.checkNotNullParameter(paramString, "currency");
         AdjustAdRevenue adjustAdRevenue = new AdjustAdRevenue("admob_sdk");
         adjustAdRevenue.setRevenue(Double.valueOf(((float)paramLong / 1000000.0F)), paramString);
         Adjust.trackAdRevenue(adjustAdRevenue);
+    }
+
+    public final void setLanguageForApp(Context paramContext) {
+        Locale locale = new Locale("en");
+        Intrinsics.checkNotNullParameter(paramContext, "context");
+        String str = getIOSCountryData(paramContext);
+        if (Intrinsics.areEqual(str, "not-set")) {
+            locale = Locale.getDefault();
+            Intrinsics.checkNotNullExpressionValue(locale, "{\n            Locale.getDefault()\n        }");
+        } else {
+            locale = new Locale(locale.getLanguage());
+        }
+        Locale.setDefault(locale);
+        Configuration configuration = new Configuration();
+        configuration.locale = locale;
+        paramContext.getResources().updateConfiguration(configuration, paramContext.getResources().getDisplayMetrics());
     }
 
 }
