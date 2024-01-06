@@ -24,7 +24,11 @@ import android.widget.Toast;
 
 import com.adjust.sdk.Adjust;
 import com.adjust.sdk.AdjustAdRevenue;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.ryu.document_reader.R;
+import com.ryu.document_reader.activity.home.BillingClientSetup;
 
 import java.io.Closeable;
 import java.io.File;
@@ -463,6 +467,44 @@ public final class Utils {
         Configuration configuration = new Configuration();
         configuration.locale = locale;
         paramContext.getResources().updateConfiguration(configuration, paramContext.getResources().getDisplayMetrics());
+    }
+
+    public final void loadBannerAds(Context paramContext, AdView paramAdView, boolean paramBoolean) {
+        Intrinsics.checkNotNullParameter(paramContext, "context");
+        Intrinsics.checkNotNullParameter(paramAdView, "mAdView");
+        if (!BillingClientSetup.isUpgraded(paramContext) && paramBoolean) {
+            AdRequest adRequest = (new AdRequest.Builder()).build();
+            Intrinsics.checkNotNullExpressionValue(adRequest, "Builder().build()");
+            paramAdView.loadAd(adRequest);
+            // TODO
+//            paramAdView.setOnPaidEventListener(new Utils$$ExternalSyntheticLambda2());
+//            paramAdView.setAdListener(new Utils$loadBannerAds$2(paramAdView));
+        } else {
+            paramAdView.setVisibility(View.GONE);
+        }
+    }
+
+    public final int getIdColorByType(Activity paramActivity, String paramString) {
+        Intrinsics.checkNotNullParameter(paramActivity, "activity");
+        Intrinsics.checkNotNullParameter(paramString, "type");
+        switch (paramString) {
+            default:
+                return R.color.color_screenshot;
+            case "favorite":
+                    return R.color.color_favourite;
+            case "power_point":
+                    return R.color.color_powerpoint;
+            case "excel":
+                    return R.color.color_excel;
+            case "word":
+                    return R.color.color_word;
+            case "text":
+                    return R.color.color_text;
+            case "pdf":
+                    return R.color.color_pdf;
+            case "all":
+                    return R.color.color_all;
+        }
     }
 
 }

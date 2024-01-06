@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="64.0dip" android:width="64.0dip" android:stackViewStyle="256.0" android:numberPickerStyle="256.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:timePickerStyle="#ff000000" android:activityChooserViewStyle="M128,188C161.137,188 188,161.137 188,128C188,94.863 161.137,68 128,68C94.863,68 68,94.863 68,128C68,161.137 94.863,188 128,188Z" android:actionModeShareDrawable="#ff000000" android:actionModeFindDrawable="12.0" android:preferencePanelStyle="1" android:preferenceHeaderPanelStyle="1" />
+    <path android:timePickerStyle="#00000000" android:activityChooserViewStyle="M128,36V28" android:actionModeShareDrawable="#ff000000" android:actionModeFindDrawable="12.0" android:preferencePanelStyle="1" android:preferenceHeaderPanelStyle="1" />
+    <path android:timePickerStyle="#00000000" android:activityChooserViewStyle="M62.9,62.9L57.3,57.3" android:actionModeShareDrawable="#ff000000" android:actionModeFindDrawable="12.0" android:preferencePanelStyle="1" android:preferenceHeaderPanelStyle="1" />
+    <path android:timePickerStyle="#00000000" android:activityChooserViewStyle="M36,128H28" android:actionModeShareDrawable="#ff000000" android:actionModeFindDrawable="12.0" android:preferencePanelStyle="1" android:preferenceHeaderPanelStyle="1" />
+    <path android:timePickerStyle="#00000000" android:activityChooserViewStyle="M62.9,193.1L57.3,198.7" android:actionModeShareDrawable="#ff000000" android:actionModeFindDrawable="12.0" android:preferencePanelStyle="1" android:preferenceHeaderPanelStyle="1" />
+    <path android:timePickerStyle="#00000000" android:activityChooserViewStyle="M128,220V228" android:actionModeShareDrawable="#ff000000" android:actionModeFindDrawable="12.0" android:preferencePanelStyle="1" android:preferenceHeaderPanelStyle="1" />
+    <path android:timePickerStyle="#00000000" android:activityChooserViewStyle="M193.1,193.1L198.7,198.7" android:actionModeShareDrawable="#ff000000" android:actionModeFindDrawable="12.0" android:preferencePanelStyle="1" android:preferenceHeaderPanelStyle="1" />
+    <path android:timePickerStyle="#00000000" android:activityChooserViewStyle="M220,128H228" android:actionModeShareDrawable="#ff000000" android:actionModeFindDrawable="12.0" android:preferencePanelStyle="1" android:preferenceHeaderPanelStyle="1" />
+    <path android:timePickerStyle="#00000000" android:activityChooserViewStyle="M193.1,62.9L198.7,57.3" android:actionModeShareDrawable="#ff000000" android:actionModeFindDrawable="12.0" android:preferencePanelStyle="1" android:preferenceHeaderPanelStyle="1" />
+</vector>

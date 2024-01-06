@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="32.0dip" android:width="36.0dip" android:stackViewStyle="36.0" android:numberPickerStyle="32.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:timePickerStyle="@color/color_pdf" android:activityChooserViewStyle="M32.5055,2.4016C28.6524,-0.882 22.9219,-0.2914 19.3852,3.3578L18,4.7852L16.6149,3.3578C13.0852,-0.2914 7.3477,-0.882 3.4945,2.4016C-0.9211,6.1703 -1.1531,12.9344 2.7984,17.0195L16.4039,31.068C17.2828,31.975 18.7102,31.975 19.5891,31.068L33.1945,17.0195C37.1531,12.9344 36.9211,6.1703 32.5055,2.4016Z" />
+</vector>

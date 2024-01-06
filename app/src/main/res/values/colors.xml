@@ -91,6 +91,7 @@
     <color name="color_red_rating">#fff44830</color>
     <color name="color_screenshot">#ff33699c</color>
     <color name="color_text">#ff8d8d8e</color>
+    <color name="color_text_selected">#ff1877f2</color>
     <color name="color_text_pdf">#fff27d59</color>
     <color name="color_word">#ff1a569b</color>
     <color name="com_facebook_blue">#ff1877f2</color>

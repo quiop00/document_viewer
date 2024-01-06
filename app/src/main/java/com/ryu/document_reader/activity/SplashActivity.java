@@ -564,7 +564,7 @@ public final class SplashActivity extends AppCompatActivity implements AdsListen
         }
     }
 
-    public void _$_clearFindViewByIdCache() {
+    public void clearFindViewByIdCache() {
         this.findViewCache.clear();
     }
 

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="16.0dip" android:width="16.0dip" android:stackViewStyle="16.0" android:numberPickerStyle="16.0"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <path android:timePickerStyle="#ff757783" android:activityChooserViewStyle="M4.0001,0L12.0001,0A4,4 0,0 1,16.0001 4L16.0001,12A4,4 0,0 1,12.0001 16L4.0001,16A4,4 0,0 1,0.0001 12L0.0001,4A4,4 0,0 1,4.0001 0z" />
+    <path android:timePickerStyle="#ffffffff" android:activityChooserViewStyle="M5.0003,10.892C5.2723,10.676 5.3963,10.576 5.3723,10.592C6.1563,9.944 6.7723,9.412 7.2203,8.996C7.6763,8.58 8.0603,8.144 8.3723,7.688C8.6843,7.232 8.8403,6.788 8.8403,6.356C8.8403,6.028 8.7643,5.772 8.6123,5.588C8.4603,5.404 8.2323,5.312 7.9283,5.312C7.6243,5.312 7.3843,5.428 7.2083,5.66C7.0403,5.884 6.9563,6.204 6.9563,6.62H4.9763C4.9923,5.94 5.1363,5.372 5.4083,4.916C5.6883,4.46 6.0523,4.124 6.5003,3.908C6.9563,3.692 7.4603,3.584 8.0123,3.584C8.9643,3.584 9.6803,3.828 10.1603,4.316C10.6483,4.804 10.8923,5.44 10.8923,6.224C10.8923,7.08 10.6003,7.876 10.0163,8.612C9.4323,9.34 8.6883,10.052 7.7843,10.748H11.0243V12.416H5.0003V10.892Z" />
+</vector>

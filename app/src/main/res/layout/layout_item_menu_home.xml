@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_3sdp"
+    android:background="?selectableItemBackground"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardItemMenu"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        app:cardBackgroundColor="@color/color_bg_menu_all"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardElevation="0.0dip">
+
+        <ImageView
+            android:id="@+id/imgMenuHome"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@android:color/transparent"
+            android:padding="@dimen/_7sdp"
+            android:src="@drawable/ic_icon_menu_excel" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/txtTitleMenuHome"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="center_horizontal"
+        android:lines="1"
+        android:paddingTop="@dimen/_5sdp"
+        android:text="@string/all"
+        android:textColor="#b3000000"
+        android:textSize="@dimen/_11ssp" />
+
+    <TextView
+        android:id="@+id/txtNumberOfFile"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="center_horizontal"
+        android:text="@string/txt_file"
+        android:textColor="#ffbbbbbb"
+        android:textSize="@dimen/_9ssp" />
+</androidx.appcompat.widget.LinearLayoutCompat>

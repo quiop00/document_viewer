@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <RelativeLayout
+            android:id="@id/top"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="?actionBarSize"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            >
+            <TextView
+                android:id="@+id/tvTitle"
+                style="@style/TextToolBar"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_toStartOf="@+id/btnPremium"
+                android:ellipsize="marquee"
+                android:fontFamily="@font/inter_medium"
+                android:gravity="start|center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:text="@string/bar_name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/btnPremium"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_toStartOf="@id/btnGridOrVertical"
+                android:background="?selectableItemBackgroundBorderless"
+                android:padding="@dimen/_3sdp"
+                android:src="@drawable/ic_crown_home" />
+
+            <ImageView
+                android:id="@+id/btnGridOrVertical"
+                style="@style/ButtonRight"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_toStartOf="@+id/btnSearch"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_menu_vertical"
+                app:tint="@color/black" />
+
+            <ImageView
+                android:id="@+id/btnSearch"
+                style="@style/ButtonRight"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_search"
+                app:tint="@color/black" />
+
+            <ImageView
+                android:id="@+id/btnRateUs"
+                style="@style/ButtonRight"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_like"
+                android:visibility="gone"
+                app:tint="@color/black" />
+        </RelativeLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPagerMain"
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:majorWeightMax="@dimen/_10sdp"
+            app:itemIconTint="@color/color_text_selected"
+            app:itemTextColor="@color/color_text_selected"
+            app:labelVisibilityMode="labeled"
+            app:layout_constraintBottom_toTopOf="@+id/adView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/menu_bottom"/>
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="50.0dip"
+            app:adSize="SMART_BANNER"
+            app:adUnitId="@string/alldoc_banner_id"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/loadingAds"
+        layout="@layout/content_ads_loading"
+        android:visibility="gone" />
+</androidx.constraintlayout.widget.ConstraintLayout>

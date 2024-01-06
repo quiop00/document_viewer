@@ -62,4 +62,8 @@ dependencies {
     implementation("com.ironsource.sdk:mediationsdk:7.7.0")
     // ironSource Ad Quality SDK
     implementation("com.ironsource:adqualitysdk:7.14.3")
+
+    implementation("androidx.viewpager2:viewpager2:1.0.0")
+
+    implementation("com.github.ybq:Android-SpinKit:1.4.0")
 }

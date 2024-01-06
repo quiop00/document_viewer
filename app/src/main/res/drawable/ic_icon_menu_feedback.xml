@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="50.0dip" android:width="38.0dip" android:stackViewStyle="38.0" android:numberPickerStyle="50.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:timePickerStyle="#ff30a3f6" android:activityChooserViewStyle="M6.509,0H23.226L37.394,14.768V43.491C37.394,47.089 34.483,50 30.897,50H6.509C2.911,50 0,47.089 0,43.491V6.509C-0,2.911 2.911,0 6.509,0Z" android:fillType="1" />
+    <path android:timePickerStyle="#ffffffff" android:activityChooserViewStyle="M23.213,0V14.655H37.394L23.213,0Z" android:strokeAlpha="0.302" android:fillAlpha="0.302" android:fillType="1" />
+    <path android:timePickerStyle="#ffffffff" android:activityChooserViewStyle="M23.022,20.088H9.94C8.53,20.088 7.383,21.235 7.383,22.646V34.109C7.383,34.652 7.997,34.958 8.43,34.648L12.073,32.049C12.379,31.831 12.738,31.716 13.114,31.716H21.127C22.537,31.716 23.684,30.569 23.684,29.159V20.751C23.684,20.385 23.388,20.088 23.022,20.088ZM19.803,28.115H12.147C11.781,28.115 11.485,27.819 11.485,27.452C11.485,27.087 11.781,26.79 12.147,26.79H19.803C20.169,26.79 20.466,27.087 20.466,27.452C20.466,27.819 20.169,28.115 19.803,28.115ZM19.803,25.023H12.147C11.781,25.023 11.485,24.726 11.485,24.36C11.485,23.994 11.781,23.698 12.147,23.698H19.803C20.169,23.698 20.466,23.994 20.466,24.36C20.466,24.726 20.169,25.023 19.803,25.023Z" />
+    <path android:timePickerStyle="#ffffffff" android:activityChooserViewStyle="M30,27.785V39.248C30,39.788 29.389,40.099 28.953,39.788L25.31,37.189C25.004,36.971 24.644,36.856 24.269,36.856H16.256C14.845,36.856 13.698,35.708 13.698,34.298V33.041H21.127C23.268,33.041 25.01,31.299 25.01,29.158V25.227H27.442C28.853,25.227 30,26.375 30,27.785Z" />
+</vector>

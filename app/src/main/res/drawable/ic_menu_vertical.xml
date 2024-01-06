@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="20.0dip" android:width="27.0dip" android:stackViewStyle="27.0" android:numberPickerStyle="20.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:timePickerStyle="#ff000000" android:activityChooserViewStyle="M24.247,0H9.161C7.806,0 6.704,1.102 6.704,2.459C6.704,3.814 7.806,4.917 9.161,4.917H24.246C25.601,4.917 26.704,3.814 26.704,2.459C26.704,1.102 25.601,0 24.247,0Z" />
+    <path android:timePickerStyle="#ff000000" android:activityChooserViewStyle="M2.458,0C1.103,0 0,1.103 0,2.458C0,3.814 1.103,4.917 2.458,4.917C3.814,4.917 4.917,3.814 4.917,2.458C4.917,1.103 3.814,0 2.458,0Z" />
+    <path android:timePickerStyle="#ff000000" android:activityChooserViewStyle="M2.458,7.542C1.103,7.542 0,8.645 0,10C0,11.356 1.103,12.458 2.458,12.458C3.814,12.458 4.917,11.356 4.917,10C4.917,8.645 3.814,7.542 2.458,7.542Z" />
+    <path android:timePickerStyle="#ff000000" android:activityChooserViewStyle="M2.458,15.083C1.103,15.083 0,16.186 0,17.542C0,18.897 1.103,20 2.458,20C3.814,20 4.917,18.897 4.917,17.542C4.917,16.186 3.814,15.083 2.458,15.083Z" />
+    <path android:timePickerStyle="#ff000000" android:activityChooserViewStyle="M24.247,7.542H9.161C7.806,7.542 6.704,8.644 6.704,10.001C6.704,11.356 7.806,12.458 9.161,12.458H24.246C25.601,12.458 26.704,11.356 26.704,10.001C26.704,8.644 25.601,7.542 24.247,7.542Z" />
+    <path android:timePickerStyle="#ff000000" android:activityChooserViewStyle="M24.247,15.083H9.161C7.806,15.083 6.704,16.186 6.704,17.543C6.704,18.898 7.806,20 9.161,20H24.246C25.601,20 26.704,18.898 26.704,17.543C26.704,16.186 25.601,15.083 24.247,15.083Z" />
+</vector>

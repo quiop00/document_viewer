@@ -40,9 +40,10 @@ public final class ContextKt {
         bottomSheetDialog.setContentView(paramInt);
         bottomSheetDialog.setCancelable(paramBoolean);
         Window window = bottomSheetDialog.getWindow();
-        if (window != null)
-            //window.setBackgroundDrawableResource(17170445);
-        window = bottomSheetDialog.getWindow();
+        // TODO
+//        if (window != null)
+//            //window.setBackgroundDrawableResource(17170445);
+//        window = bottomSheetDialog.getWindow();
         if (window != null)
             window.setLayout(-1, -2);
         return (Dialog)bottomSheetDialog;

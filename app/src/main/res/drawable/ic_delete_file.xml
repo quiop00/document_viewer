@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="32.0dip" android:width="32.0dip" android:stackViewStyle="32.0" android:numberPickerStyle="32.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:timePickerStyle="#ffffffff" android:activityChooserViewStyle="M24,31H8a3,3 0,0 1,-3 -3V9A1,1 0,0 1,7 9V28a1,1 0,0 0,1 1H24a1,1 0,0 0,1 -1V9a1,1 0,0 1,2 0V28A3,3 0,0 1,24 31Z" />
+    <path android:timePickerStyle="#ffffffff" android:activityChooserViewStyle="M28,7H4A1,1 0,0 1,4 5H28a1,1 0,0 1,0 2Z" />
+    <path android:timePickerStyle="#ffffffff" android:activityChooserViewStyle="M20,7a1,1 0,0 1,-1 -1V3H13V6a1,1 0,0 1,-2 0V2a1,1 0,0 1,1 -1h8a1,1 0,0 1,1 1V6A1,1 0,0 1,20 7Z" />
+    <path android:timePickerStyle="#ffffffff" android:activityChooserViewStyle="M16,26a1,1 0,0 1,-1 -1V11a1,1 0,0 1,2 0V25A1,1 0,0 1,16 26Z" />
+    <path android:timePickerStyle="#ffffffff" android:activityChooserViewStyle="M21,24a1,1 0,0 1,-1 -1V13a1,1 0,0 1,2 0V23A1,1 0,0 1,21 24Z" />
+    <path android:timePickerStyle="#ffffffff" android:activityChooserViewStyle="M11,24a1,1 0,0 1,-1 -1V13a1,1 0,0 1,2 0V23A1,1 0,0 1,11 24Z" />
+</vector>
