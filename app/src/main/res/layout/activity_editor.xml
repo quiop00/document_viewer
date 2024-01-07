@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fff2f2f2">
+
+    <RelativeLayout
+        android:id="@+id/layout_top"
+        android:layout_width="fill_parent"
+        android:layout_height="60.0dip"
+        android:padding="5.0dip">
+
+        <TextView
+            android:id="@+id/tvDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="10.0dip"
+            android:text="@string/done"
+            android:textAllCaps="true"
+            android:textColor="#d9000000"
+            android:textSize="12.0sp" />
+
+        <TextView
+            android:id="@+id/tvRestore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10.0dip"
+            android:layout_marginRight="10.0dip"
+            android:layout_toStartOf="@+id/tvCrop"
+            android:layout_toLeftOf="@+id/tvCrop"
+            android:padding="10.0dip"
+            android:text="@string/restore"
+            android:textAllCaps="true"
+            android:textColor="#d9000000"
+            android:textSize="12.0sp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tvCrop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10.0dip"
+            android:layout_marginRight="10.0dip"
+            android:layout_toStartOf="@+id/imgDelete"
+            android:layout_toLeftOf="@+id/imgDelete"
+            android:padding="10.0dip"
+            android:text="@string/crop"
+            android:textAllCaps="true"
+            android:textColor="#d9000000"
+            android:textSize="12.0sp"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/imgUndo"
+            android:layout_width="45.0dip"
+            android:layout_height="45.0dip"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5.0dip"
+            android:layout_marginRight="5.0dip"
+            android:layout_toStartOf="@+id/imgRedo"
+            android:layout_toLeftOf="@+id/imgRedo"
+            android:padding="7.0dip"
+            android:src="@drawable/ic_undo_xml" />
+
+        <ImageView
+            android:id="@+id/imgRedo"
+            android:layout_width="45.0dip"
+            android:layout_height="45.0dip"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10.0dip"
+            android:layout_marginRight="10.0dip"
+            android:layout_toStartOf="@+id/imgDelete"
+            android:layout_toLeftOf="@+id/imgDelete"
+            android:padding="7.0dip"
+            android:src="@drawable/ic_redo_xml" />
+
+        <ImageView
+            android:id="@+id/imgDelete"
+            android:layout_width="45.0dip"
+            android:layout_height="45.0dip"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5.0dip"
+            android:layout_marginRight="5.0dip"
+            android:layout_toStartOf="@+id/imgShare"
+            android:layout_toLeftOf="@+id/imgShare"
+            android:padding="7.0dip"
+            android:src="@drawable/ic_delete_xml"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/imgShare"
+            android:layout_width="45.0dip"
+            android:layout_height="45.0dip"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5.0dip"
+            android:layout_marginRight="5.0dip"
+            android:padding="7.0dip"
+            android:src="@drawable/ic_share_xml" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/layout_bottom"
+        android:layout_below="@+id/layout_top"
+        android:layout_marginTop="30.0dip"
+        android:layout_marginBottom="30.0dip">
+
+        <com.ryu.document_reader.widget.cropper.CropImageView
+            android:id="@+id/cropImageView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true" />
+
+        <com.ryu.document_reader.widget.drawingview.DrawingView
+            android:id="@+id/drawingView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:background="@android:color/transparent"
+            android:majorWeightMax="8.0dip"
+            app:brush="pen"
+            app:brush_color="#ff2187bb"
+            app:brush_size="0.0" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutBrush"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/layout_bottom"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5.0dip"
+        android:background="#ffe0e0e0"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <com.ryu.document_reader.widget.drawingview.BrushView
+            android:id="@+id/brushView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4.0dip" />
+
+        <SeekBar
+            android:id="@+id/sbSize"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="8.0dip" />
+
+        <ImageView
+            android:id="@+id/imgClose"
+            android:layout_width="30.0dip"
+            android:layout_height="30.0dip"
+            android:layout_margin="10.0dip"
+            android:src="@drawable/ic_close" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="70.0dip"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:padding="5.0dip">
+
+        <ImageView
+            android:id="@+id/imgFunctionCrop"
+            android:layout_width="50.0dip"
+            android:layout_height="50.0dip"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="7.0dip"
+            android:layout_marginRight="7.0dip"
+            android:background="@drawable/selector_border_draw_mode"
+            android:padding="5.0dip"
+            android:src="@drawable/ic_function_crop_xml" />
+
+        <ImageView
+            android:id="@+id/imgFunctionPen"
+            android:layout_width="50.0dip"
+            android:layout_height="50.0dip"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5.0dip"
+            android:layout_marginRight="5.0dip"
+            android:layout_toEndOf="@+id/imgFunctionCrop"
+            android:layout_toRightOf="@+id/imgFunctionCrop"
+            android:padding="5.0dip"
+            android:src="@drawable/ic_pen_xml" />
+
+        <ImageView
+            android:id="@+id/imgFunctionEraser"
+            android:layout_width="50.0dip"
+            android:layout_height="50.0dip"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8.0dip"
+            android:layout_marginRight="8.0dip"
+            android:layout_toEndOf="@+id/imgFunctionPen"
+            android:layout_toRightOf="@+id/imgFunctionPen"
+            android:padding="5.0dip"
+            android:src="@drawable/ic_eraser_xml" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgColorPicker"
+            android:layout_width="35.0dip"
+            android:layout_height="35.0dip"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5.0dip"
+            android:layout_marginLeft="5.0dip"
+            android:layout_toEndOf="@id/imgFunctionEraser"
+            android:layout_toRightOf="@id/imgFunctionEraser"
+            app:civ_border_color="#ff000000"
+            app:civ_border_width="2.0dip" />
+    </RelativeLayout>
+</RelativeLayout>

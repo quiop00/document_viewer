@@ -205,269 +205,269 @@ public final class SplashActivity extends AppCompatActivity implements AdsListen
 
     private final void loadDataRemoteConfig() {
         Constants constants2 = Constants.INSTANCE;
-        FirebaseRemoteConfig firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        FirebaseRemoteConfig firebaseRemoteConfig3 = null;
-        FirebaseRemoteConfig firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        constants2.setCURERENT_VERSION_CODE(firebaseRemoteConfig2.getLong("current_version"));
+        FirebaseRemoteConfig firebaseRemoteConfig = this.mFirebaseRemoteConfig;
+//        FirebaseRemoteConfig firebaseRemoteConfig3 = null;
+//        FirebaseRemoteConfig firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        constants2.setCURERENT_VERSION_CODE(firebaseRemoteConfig.getLong("current_version"));
+//        constants2 = Constants.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        constants2.setMINIMUM_VERSION_CODE(firebaseRemoteConfig.getLong("minimum_version"));
+//        constants2 = Constants.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        constants2.setDISTANCE_TIME_ADS_OTHER(firebaseRemoteConfig.getLong("distance_time_show_other_ads"));
         constants2 = Constants.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        constants2.setMINIMUM_VERSION_CODE(firebaseRemoteConfig2.getLong("minimum_version"));
-        constants2 = Constants.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        constants2.setDISTANCE_TIME_ADS_OTHER(firebaseRemoteConfig2.getLong("distance_time_show_other_ads"));
-        constants2 = Constants.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        constants2.setDISTANCE_TIME_ADS_SAME(firebaseRemoteConfig2.getLong("distance_time_show_same_ads"));
-        constants2 = Constants.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        constants2.setDISTANCE_TIME_WAIT_MAX(firebaseRemoteConfig2.getLong("distance_time_wait_max_ads"));
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        constants2.setDISTANCE_TIME_ADS_SAME(firebaseRemoteConfig.getLong("distance_time_show_same_ads"));
+//        constants2 = Constants.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        constants2.setDISTANCE_TIME_WAIT_MAX(firebaseRemoteConfig.getLong("distance_time_wait_max_ads"));
         AdsManager adsManager = AdsManager.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        adsManager.set_show_native_ads_home(firebaseRemoteConfig2.getBoolean("is_show_native_ads_home"));
-        adsManager = AdsManager.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        adsManager.set_show_native_ads_list_file(firebaseRemoteConfig2.getBoolean("is_show_native_ads_list_file"));
-        adsManager = AdsManager.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        adsManager.set_show_native_ads_search_file(firebaseRemoteConfig2.getBoolean("is_show_native_ads_search_file"));
-        adsManager = AdsManager.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        adsManager.set_show_native_ads_language(firebaseRemoteConfig2.getBoolean("is_show_native_ads_language"));
-        adsManager = AdsManager.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        adsManager.set_show_native_save_file(firebaseRemoteConfig2.getBoolean("is_show_native_save_file"));
-        adsManager = AdsManager.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        adsManager.set_show_native_ads_image_convert(firebaseRemoteConfig2.getBoolean("is_show_native_ads_image_convert"));
-        adsManager = AdsManager.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        adsManager.set_show_native_ads_image_list(firebaseRemoteConfig2.getBoolean("is_show_native_ads_image_list"));
-        adsManager = AdsManager.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        adsManager.set_show_banner_ads_list_file(firebaseRemoteConfig2.getBoolean("is_show_banner_ads_list_file"));
-        adsManager = AdsManager.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        adsManager.set_show_banner_ads_pdf_viewer(firebaseRemoteConfig2.getBoolean("is_show_banner_ads_pdf_viewer"));
-        adsManager = AdsManager.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        adsManager.set_show_banner_ads_office_viewer(firebaseRemoteConfig2.getBoolean("is_show_banner_ads_office_viewer"));
-        adsManager = AdsManager.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        adsManager.set_show_banner_ads_image_viewer(firebaseRemoteConfig2.getBoolean("is_show_banner_ads_image_viewer"));
-        adsManager = AdsManager.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        adsManager.set_show_inter_ads_splash(firebaseRemoteConfig2.getBoolean("is_show_inter_ads_splash"));
-        adsManager = AdsManager.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        adsManager.set_show_inter_ads_home(firebaseRemoteConfig2.getBoolean("is_show_inter_ads_home"));
-        adsManager = AdsManager.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        adsManager.set_show_inter_ads_list_file(firebaseRemoteConfig2.getBoolean("is_show_inter_ads_list_file"));
-        adsManager = AdsManager.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        adsManager.set_show_inter_ads_search_file(firebaseRemoteConfig2.getBoolean("is_show_inter_ads_search_file"));
-        adsManager = AdsManager.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        adsManager.set_show_open_ads_resume_home(firebaseRemoteConfig2.getBoolean("is_show_open_ads_resume_home"));
-        adsManager = AdsManager.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        adsManager.set_show_open_ads_resume_list_file(firebaseRemoteConfig2.getBoolean("is_show_open_ads_resume_list_file"));
-        adsManager = AdsManager.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        adsManager.set_show_open_ads_resume_search_file(firebaseRemoteConfig2.getBoolean("is_show_open_ads_resume_search_file"));
-        adsManager = AdsManager.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        adsManager.set_show_open_ads_resume_pdf_viewer(firebaseRemoteConfig2.getBoolean("is_show_open_ads_resume_pdf_viewer"));
-        adsManager = AdsManager.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        adsManager.set_show_open_ads_resume_office_viewer(firebaseRemoteConfig2.getBoolean("is_show_open_ads_resume_office_viewer"));
-        adsManager = AdsManager.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        adsManager.set_show_open_ads_resume_image_viewer(firebaseRemoteConfig2.getBoolean("is_show_open_ads_resume_image_viewer"));
-        adsManager = AdsManager.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        adsManager.set_show_open_ads_resume_language_viewer(firebaseRemoteConfig2.getBoolean("is_show_open_ads_resume_language_viewer"));
-        adsManager = AdsManager.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        adsManager.set_show_open_ads_resume_screenshot_editor(firebaseRemoteConfig2.getBoolean("is_show_open_ads_resume_screenshot_editor"));
-        adsManager = AdsManager.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        adsManager.set_show_open_ads_any_position(firebaseRemoteConfig2.getBoolean("is_show_open_ads_any_position"));
-        adsManager = AdsManager.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        adsManager.set_show_button_convert(firebaseRemoteConfig2.getBoolean("is_show_button_convert"));
-        adsManager = AdsManager.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig2 = null;
-        }
-        String str = firebaseRemoteConfig2.getString("email_feedback");
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        adsManager.set_show_native_ads_home(firebaseRemoteConfig.getBoolean("is_show_native_ads_home"));
+//        adsManager = AdsManager.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        adsManager.set_show_native_ads_list_file(firebaseRemoteConfig.getBoolean("is_show_native_ads_list_file"));
+//        adsManager = AdsManager.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        adsManager.set_show_native_ads_search_file(firebaseRemoteConfig.getBoolean("is_show_native_ads_search_file"));
+//        adsManager = AdsManager.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        adsManager.set_show_native_ads_language(firebaseRemoteConfig.getBoolean("is_show_native_ads_language"));
+//        adsManager = AdsManager.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        adsManager.set_show_native_save_file(firebaseRemoteConfig.getBoolean("is_show_native_save_file"));
+//        adsManager = AdsManager.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        adsManager.set_show_native_ads_image_convert(firebaseRemoteConfig.getBoolean("is_show_native_ads_image_convert"));
+//        adsManager = AdsManager.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        adsManager.set_show_native_ads_image_list(firebaseRemoteConfig.getBoolean("is_show_native_ads_image_list"));
+//        adsManager = AdsManager.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        adsManager.set_show_banner_ads_list_file(firebaseRemoteConfig.getBoolean("is_show_banner_ads_list_file"));
+//        adsManager = AdsManager.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        adsManager.set_show_banner_ads_pdf_viewer(firebaseRemoteConfig.getBoolean("is_show_banner_ads_pdf_viewer"));
+//        adsManager = AdsManager.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        adsManager.set_show_banner_ads_office_viewer(firebaseRemoteConfig.getBoolean("is_show_banner_ads_office_viewer"));
+//        adsManager = AdsManager.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        adsManager.set_show_banner_ads_image_viewer(firebaseRemoteConfig.getBoolean("is_show_banner_ads_image_viewer"));
+//        adsManager = AdsManager.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        adsManager.set_show_inter_ads_splash(firebaseRemoteConfig.getBoolean("is_show_inter_ads_splash"));
+//        adsManager = AdsManager.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        adsManager.set_show_inter_ads_home(firebaseRemoteConfig.getBoolean("is_show_inter_ads_home"));
+//        adsManager = AdsManager.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        adsManager.set_show_inter_ads_list_file(firebaseRemoteConfig.getBoolean("is_show_inter_ads_list_file"));
+//        adsManager = AdsManager.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        adsManager.set_show_inter_ads_search_file(firebaseRemoteConfig.getBoolean("is_show_inter_ads_search_file"));
+//        adsManager = AdsManager.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        adsManager.set_show_open_ads_resume_home(firebaseRemoteConfig.getBoolean("is_show_open_ads_resume_home"));
+//        adsManager = AdsManager.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        adsManager.set_show_open_ads_resume_list_file(firebaseRemoteConfig.getBoolean("is_show_open_ads_resume_list_file"));
+//        adsManager = AdsManager.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        adsManager.set_show_open_ads_resume_search_file(firebaseRemoteConfig.getBoolean("is_show_open_ads_resume_search_file"));
+//        adsManager = AdsManager.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        adsManager.set_show_open_ads_resume_pdf_viewer(firebaseRemoteConfig.getBoolean("is_show_open_ads_resume_pdf_viewer"));
+//        adsManager = AdsManager.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        adsManager.set_show_open_ads_resume_office_viewer(firebaseRemoteConfig.getBoolean("is_show_open_ads_resume_office_viewer"));
+//        adsManager = AdsManager.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        adsManager.set_show_open_ads_resume_image_viewer(firebaseRemoteConfig.getBoolean("is_show_open_ads_resume_image_viewer"));
+//        adsManager = AdsManager.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        adsManager.set_show_open_ads_resume_language_viewer(firebaseRemoteConfig.getBoolean("is_show_open_ads_resume_language_viewer"));
+//        adsManager = AdsManager.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        adsManager.set_show_open_ads_resume_screenshot_editor(firebaseRemoteConfig.getBoolean("is_show_open_ads_resume_screenshot_editor"));
+//        adsManager = AdsManager.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        adsManager.set_show_open_ads_any_position(firebaseRemoteConfig.getBoolean("is_show_open_ads_any_position"));
+//        adsManager = AdsManager.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        adsManager.set_show_button_convert(firebaseRemoteConfig.getBoolean("is_show_button_convert"));
+//        adsManager = AdsManager.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig2 = null;
+//        }
+        String str = firebaseRemoteConfig.getString("email_feedback");
         Intrinsics.checkNotNullExpressionValue(str, "mFirebaseRemoteConfig.getString(\"email_feedback\")");
         adsManager.setEmail_feedback(str);
-        Constants constants1 = Constants.INSTANCE;
-        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-        FirebaseRemoteConfig firebaseRemoteConfig1 = firebaseRemoteConfig4;
-        if (firebaseRemoteConfig4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-            firebaseRemoteConfig1 = null;
-        }
-        constants1.setMAX_TIME_AT_SPLASH(firebaseRemoteConfig1.getLong("max_time_at_splash"));
+//        Constants constants1 = Constants.INSTANCE;
+//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
+//        FirebaseRemoteConfig firebaseRemoteConfig1 = firebaseRemoteConfig4;
+//        if (firebaseRemoteConfig4 == null) {
+//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
+//            firebaseRemoteConfig1 = null;
+//        }
+        constants2.setMAX_TIME_AT_SPLASH(firebaseRemoteConfig.getLong("max_time_at_splash"));
         if (5151L >= Constants.INSTANCE.getMINIMUM_VERSION_CODE()) {
             if (5151L < Constants.INSTANCE.getCURERENT_VERSION_CODE()) {
                 TextView textView = null;
                 Dialog dialog2 = this.mWarningDialog;
-                firebaseRemoteConfig1 = firebaseRemoteConfig3;
+                //firebaseRemoteConfig1 = firebaseRemoteConfig3;
                 if (dialog2 != null)
                     textView = (TextView)dialog2.findViewById(R.id.btnDoLater);
                 if (textView != null)

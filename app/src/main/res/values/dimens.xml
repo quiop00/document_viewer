@@ -1442,4 +1442,8 @@
     <dimen name="tooltip_vertical_padding">6.5dip</dimen>
     <dimen name="tooltip_y_offset_non_touch">0.0dip</dimen>
     <dimen name="tooltip_y_offset_touch">16.0dip</dimen>
+
+    <dimen name="brush1_min_stroke_size">5dp</dimen>
+    <dimen name="brush1_max_stroke_size">30dp</dimen>
+
 </resources>

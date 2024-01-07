@@ -46,7 +46,7 @@ public class MessageDialog extends ADialog
      * @param model
      * @param dialogID
      * @param titleResID
-     * @param messageID
+     * @param message
      */
     public MessageDialog(IControl control, Context context, IDialogAction action, Vector<Object> model,
         int dialogID, int titleResID, String message)

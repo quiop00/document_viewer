@@ -66,4 +66,11 @@ dependencies {
     implementation("androidx.viewpager2:viewpager2:1.0.0")
 
     implementation("com.github.ybq:Android-SpinKit:1.4.0")
+    // https://mvnrepository.com/artifact/androidx.exifinterface/exifinterface
+    implementation("androidx.exifinterface:exifinterface:1.3.7")
+
+    implementation("com.raed.drawingview:drawingview:1.0")
+    // https://mvnrepository.com/artifact/de.hdodenhof/circleimageview
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+
 }

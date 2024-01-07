@@ -16,9 +16,9 @@
 
 package com.reader.office.system.dialog;
 
-import com.reader.office.officereader.R;
 import com.reader.office.system.IControl;
 import com.reader.office.system.beans.CalloutView.CalloutManager;
+import com.ryu.document_reader.R;
 
 import android.app.Dialog;
 import android.content.Context;

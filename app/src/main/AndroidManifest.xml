@@ -39,6 +39,15 @@
         android:theme="@style/Theme.Document_reader"
         tools:targetApi="31">
         <activity
+            android:name=".activity.imagetopdf.convert.ConvertActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.imagetopdf.ChooseImageToPdfActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.editor.EditorActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.home.HomeActivity2"
             android:exported="false" />
         <activity

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog_permission"
+    android:orientation="vertical"
+    android:primary="@color/white">
+
+    <ImageView
+        android:id="@+id/btnClose"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_gravity="end"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="?selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="@dimen/_3sdp"
+        android:src="@drawable/ic_close_black_24dp"
+        app:tint="#ffd9d9d9" />
+
+    <ImageView
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_rate_5" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="center"
+        android:text="@string/txt_are_you_satisfied"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/btnGood"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:background="@drawable/bg_btn_good"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="center"
+        android:paddingTop="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_12sdp"
+        android:text="@string/txt_good"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp" />
+
+    <TextView
+        android:id="@+id/btnNotReally"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:background="@drawable/bg_btn_good"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="center"
+        android:paddingTop="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_12sdp"
+        android:text="@string/txt_not_really"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp" />
+</LinearLayout>

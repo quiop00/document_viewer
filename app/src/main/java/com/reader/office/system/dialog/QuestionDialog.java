@@ -47,7 +47,7 @@ public class QuestionDialog extends ADialog
      * @param model
      * @param dialogID
      * @param titleResID
-     * @param messageID
+     * @param message
      */
     public QuestionDialog(IControl control, Context context, IDialogAction action, Vector<Object> model,
         int dialogID, int titleResID, String message)
