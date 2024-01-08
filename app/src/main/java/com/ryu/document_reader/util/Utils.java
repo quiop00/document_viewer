@@ -2,6 +2,7 @@ package com.ryu.document_reader.util;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
@@ -24,11 +25,14 @@ import android.widget.Toast;
 
 import com.adjust.sdk.Adjust;
 import com.adjust.sdk.AdjustAdRevenue;
+import com.google.android.gms.ads.AdLoader;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.nativead.NativeAdOptions;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.ryu.document_reader.R;
 import com.ryu.document_reader.activity.home.BillingClientSetup;
+import com.ryu.document_reader.ads.TemplateView;
 
 import java.io.Closeable;
 import java.io.File;
@@ -505,6 +509,27 @@ public final class Utils {
             case "all":
                     return R.color.color_all;
         }
+    }
+
+    public final void loadNativeAds(Context paramContext, TemplateView paramTemplateView, String paramString, boolean paramBoolean) {
+        Intrinsics.checkNotNullParameter(paramContext, "context");
+        Intrinsics.checkNotNullParameter(paramTemplateView, "template");
+        Intrinsics.checkNotNullParameter(paramString, "id");
+        if (!BillingClientSetup.isUpgraded(paramContext) && paramBoolean) {
+            // TODO
+//            AdLoader adLoader = (new AdLoader.Builder(paramContext, paramString)).forNativeAd(new Utils$$ExternalSyntheticLambda0(paramTemplateView)).withAdListener(new Utils$loadNativeAds$adLoader$2(paramTemplateView)).withNativeAdOptions((new NativeAdOptions.Builder()).build()).build();
+//            adLoader.loadAd((new AdRequest.Builder()).build());
+        } else {
+            paramTemplateView.setVisibility(View.GONE);
+        }
+    }
+
+    public final ProgressDialog onCreateProgressDialog(Context paramContext) {
+        Intrinsics.checkNotNullParameter(paramContext, "context");
+        ProgressDialog progressDialog = new ProgressDialog(paramContext, R.style.AlertDialogCustom);
+        progressDialog.setCanceledOnTouchOutside(false);
+        progressDialog.setTitle(paramContext.getResources().getString(R.string.txt_loading));
+        return progressDialog;
     }
 
 }

@@ -96,4 +96,15 @@
     <style name="ButtonRight" parent="@style/ButtonToolBar">
         <item name="android:layout_marginRight">@dimen/_10sdp</item>
     </style>
+    <style name="ButtonToolBarStyle">
+        <item name="android:padding">@dimen/_3sdp</item>
+        <item name="android:layout_width">@dimen/_30sdp</item>
+        <item name="android:layout_height">@dimen/_30sdp</item>
+        <item name="android:layout_marginStart">@dimen/_12sdp</item>
+    </style>
+    <style name="AlertDialogCustom" parent="@style/Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:background">@color/white</item>
+        <item name="colorAccent">@color/color_red</item>
+    </style>
 </resources>

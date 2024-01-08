@@ -73,4 +73,11 @@ dependencies {
     // https://mvnrepository.com/artifact/de.hdodenhof/circleimageview
     implementation("de.hdodenhof:circleimageview:3.1.0")
 
+    // https://mvnrepository.com/artifact/com.itextpdf/itextpdf
+    implementation("com.itextpdf:itextpdf:5.5.13.3")
+
+    // https://mvnrepository.com/artifact/com.github.bumptech.glide/glide
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+
+
 }
