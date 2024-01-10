@@ -39,6 +39,9 @@
         android:theme="@style/Theme.Document_reader"
         tools:targetApi="31">
         <activity
+            android:name=".activity.listfile.ListFileActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.permission.SetDefaultReaderActivity"
             android:exported="false" />
         <activity

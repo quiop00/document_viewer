@@ -48,6 +48,7 @@ import java.util.Set;
 
 import kotlin.Unit;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.text.StringsKt;
 
 public final class Utils {
     private static final String APP_DOC = "AppDoc";
@@ -532,4 +533,7 @@ public final class Utils {
         return progressDialog;
     }
 
+    public final String getEndFile(String paramString) {
+        return StringsKt.endsWith(paramString, ".pdf", false, 2, null) ? ".pdf" : (StringsKt.endsWith(paramString, ".doc", false, 2, null) ? ".doc" : (StringsKt.endsWith(paramString, ".docx", false, 2, null) ? ".docx" : (StringsKt.endsWith(paramString, ".xlsx", false, 2, null) ? ".xlsx" : (StringsKt.endsWith(paramString, ".xls", false, 2, null) ? ".xls" : (StringsKt.endsWith(paramString, ".pptx", false, 2, null) ? ".pptx" : (StringsKt.endsWith(paramString, ".txt", false, 2, null) ? ".txt" : (StringsKt.endsWith(paramString, ".ppt", false, 2, null) ? ".ppt" : (StringsKt.endsWith(paramString, ".png", false, 2, null) ? ".png" : (StringsKt.endsWith(paramString, ".jpg", false, 2, null) ? ".jpg" : "")))))))));
+    }
 }

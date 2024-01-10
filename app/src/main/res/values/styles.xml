@@ -107,4 +107,10 @@
         <item name="android:background">@color/white</item>
         <item name="colorAccent">@color/color_red</item>
     </style>
+    <style name="ButtonBack" parent="@style/ButtonToolBar">
+        <item name="android:layout_marginLeft">@dimen/_15sdp</item>
+    </style>
+    <style name="ButtonRight" parent="@style/ButtonToolBar">
+        <item name="android:layout_marginRight">@dimen/_10sdp</item>
+    </style>
 </resources>

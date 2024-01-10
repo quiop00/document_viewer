@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="5.0dip">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_dialog_order"
+        android:orientation="vertical"
+        android:padding="15.0dip">
+
+        <LinearLayout
+            android:id="@+id/layout_order_by_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10.0dip">
+
+            <ImageView
+                android:id="@+id/imv_tick_by_name"
+                android:layout_width="20.0dip"
+                android:layout_height="20.0dip"
+                android:layout_marginEnd="20.0dip"
+                android:layout_marginRight="20.0dip"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/ic_tick" />
+
+            <ImageView
+                android:id="@+id/imv_order_by_name"
+                android:layout_width="30.0dip"
+                android:layout_height="30.0dip"
+                app:srcCompat="@drawable/ic_order_by_name" />
+
+            <TextView
+                android:id="@+id/tv_order_by_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10.0dip"
+                android:layout_marginLeft="10.0dip"
+                android:text="@string/order_by_name_az"
+                android:textColor="#d9000000"
+                android:textSize="13.0sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_order_by_name_za"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10.0dip">
+
+            <ImageView
+                android:id="@+id/imv_tick_by_name_za"
+                android:layout_width="20.0dip"
+                android:layout_height="20.0dip"
+                android:layout_marginEnd="20.0dip"
+                android:layout_marginRight="20.0dip"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/ic_tick" />
+
+            <ImageView
+                android:id="@+id/imv_order_by_name_za"
+                android:layout_width="30.0dip"
+                android:layout_height="30.0dip"
+                app:srcCompat="@drawable/ic_order_by_name2" />
+
+            <TextView
+                android:id="@+id/tv_order_by_name_za"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10.0dip"
+                android:layout_marginLeft="10.0dip"
+                android:text="@string/order_by_name_za"
+                android:textColor="#d9000000"
+                android:textSize="13.0sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dip"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="55.0dip"
+            android:layout_marginLeft="55.0dip"
+            android:layout_marginEnd="10.0dip"
+            android:layout_marginRight="10.0dip"
+            android:background="#ff989898" />
+
+        <LinearLayout
+            android:id="@+id/layout_order_by_created_time"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10.0dip">
+
+            <ImageView
+                android:id="@+id/imv_tick_by_create"
+                android:layout_width="20.0dip"
+                android:layout_height="20.0dip"
+                android:layout_marginEnd="15.0dip"
+                android:layout_marginRight="15.0dip"
+                app:srcCompat="@drawable/ic_tick" />
+
+            <ImageView
+                android:id="@+id/imv_order_by_created_time"
+                android:layout_width="35.0dip"
+                android:layout_height="35.0dip"
+                app:srcCompat="@drawable/ic_order_by_created_time" />
+
+            <TextView
+                android:id="@+id/tv_order_by_created_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10.0dip"
+                android:layout_marginLeft="10.0dip"
+                android:text="@string/order_by_created_time"
+                android:textColor="#d9000000"
+                android:textSize="13.0sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dip"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="55.0dip"
+            android:layout_marginLeft="55.0dip"
+            android:layout_marginEnd="10.0dip"
+            android:layout_marginRight="10.0dip"
+            android:background="#ff989898" />
+
+        <LinearLayout
+            android:id="@+id/layout_order_by_accessed_time"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10.0dip">
+
+            <ImageView
+                android:id="@+id/imv_tick_by_accessed"
+                android:layout_width="20.0dip"
+                android:layout_height="20.0dip"
+                android:layout_marginEnd="20.0dip"
+                android:layout_marginRight="20.0dip"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/ic_tick" />
+
+            <ImageView
+                android:id="@+id/imv_order_by_accessed_time"
+                android:layout_width="30.0dip"
+                android:layout_height="30.0dip"
+                app:srcCompat="@drawable/ic_order_by_accessed_time" />
+
+            <TextView
+                android:id="@+id/tv_order_by_accessed_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10.0dip"
+                android:layout_marginLeft="10.0dip"
+                android:text="@string/order_by_accessed_time"
+                android:textColor="#d9000000"
+                android:textSize="13.0sp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
