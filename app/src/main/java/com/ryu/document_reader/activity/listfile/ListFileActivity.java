@@ -469,9 +469,9 @@ public final class ListFileActivity extends BaseActivity implements ListFileAdap
         // TODO
        // str = String.format(str, Arrays.copyOf(new Object[] { Integer.valueOf(0) }, 1));
         textView.setText(str);
-        ((ImageView)paramListFileActivity.findCachedViewById(R.id.btnSelectAll)).setVisibility(View.VISIBLE);
-        ((ImageView)paramListFileActivity.findCachedViewById(R.id.btnOrder)).setVisibility(View.GONE);
-        ((ImageView)paramListFileActivity.findCachedViewById(R.id.btnSelect)).setVisibility(View.GONE);
+        findCachedViewById(R.id.btnSelectAll).setVisibility(View.VISIBLE);
+        findCachedViewById(R.id.btnOrder).setVisibility(View.GONE);
+        findCachedViewById(R.id.btnSelect).setVisibility(View.GONE);
         ListFileAdapter listFileAdapter = paramListFileActivity.mListFileAdapter;
         if (listFileAdapter != null)
             listFileAdapter.setSelectedMode(true);
@@ -506,7 +506,7 @@ public final class ListFileActivity extends BaseActivity implements ListFileAdap
 
     private final void initData() {
         this.mFiles.clear();
-        ((TextView)findCachedViewById(R.id.txtTitle)).setSelected(true);
+        findCachedViewById(R.id.txtTitle).setSelected(true);
         String str = getIntent().getStringExtra("type");
         if (TextUtils.isEmpty(str)) {
             str = "all";
@@ -515,11 +515,11 @@ public final class ListFileActivity extends BaseActivity implements ListFileAdap
         this.mFiles.addAll(getListFileByType());
         this.mListFileAdapter = new ListFileAdapter(this.mFiles, this, this.mColor, false,  null);
         if (this.mFiles.isEmpty()) {
-            ((LinearLayout)findCachedViewById(R.id.layoutNofile)).setVisibility(View.VISIBLE);
+            findCachedViewById(R.id.layoutNofile).setVisibility(View.VISIBLE);
         } else {
-            ((LinearLayout)findCachedViewById(R.id.layoutNofile)).setVisibility(View.GONE);
+            findCachedViewById(R.id.layoutNofile).setVisibility(View.GONE);
         }
-        ((RecyclerView)findCachedViewById(R.id.rvListFile)).setAdapter((RecyclerView.Adapter)this.mListFileAdapter);
+        ((RecyclerView)findCachedViewById(R.id.rvListFile)).setAdapter(this.mListFileAdapter);
         (new SortFile()).execute();
         Context context = (Context)this;
         Dialog dialog2 = ContextKt.onCreateDialog(context, R.layout.layout_dialog_wait_handle, false);
@@ -541,17 +541,15 @@ public final class ListFileActivity extends BaseActivity implements ListFileAdap
 
     private final void initThemeColor() {
         String str = getIntent().getStringExtra("type");
-        Context context = (Context)this;
         Utils utils = Utils.INSTANCE;
-        Activity activity = (Activity)this;
-        this.mColor = ContextCompat.getColor(context, utils.getIdColorByType(activity, str));
-        Utils.INSTANCE.setStatusBarColor(activity, this.mColor);
-        ((RelativeLayout)findCachedViewById(R.id.toolBar)).setBackgroundColor(this.mColor);
+        this.mColor = ContextCompat.getColor(this, utils.getIdColorByType(this, str));
+        Utils.INSTANCE.setStatusBarColor(this, this.mColor);
+        findCachedViewById(R.id.toolBar).setBackgroundColor(this.mColor);
     }
 
     private final void initThemeView() {
         if (SplashActivity.Companion.getTheme() == 1)
-            ((FrameLayout)findCachedViewById(R.id.layoutMain)).setBackgroundColor(ContextCompat.getColor((Context)this, R.color.colorBlackAltLight));
+            findCachedViewById(R.id.layoutMain).setBackgroundColor(ContextCompat.getColor(this, R.color.colorBlackAltLight));
     }
 
     private final void loadFile() {
@@ -590,10 +588,10 @@ public final class ListFileActivity extends BaseActivity implements ListFileAdap
     }
 
     private final void setEnableLayoutOption(boolean paramBoolean) {
-        ((TextView)findCachedViewById(R.id.tvDelete)).setEnabled(paramBoolean);
-        ((TextView)findCachedViewById(R.id.tvShare)).setEnabled(paramBoolean);
-        ((ImageView)findCachedViewById(R.id.ivDelete)).setEnabled(paramBoolean);
-        ((ImageView)findCachedViewById(R.id.ivShare)).setEnabled(paramBoolean);
+        findCachedViewById(R.id.tvDelete).setEnabled(paramBoolean);
+        findCachedViewById(R.id.tvShare).setEnabled(paramBoolean);
+        findCachedViewById(R.id.ivDelete).setEnabled(paramBoolean);
+        findCachedViewById(R.id.ivShare).setEnabled(paramBoolean);
     }
 
     private final void showAds() {
@@ -611,7 +609,7 @@ public final class ListFileActivity extends BaseActivity implements ListFileAdap
         dialog.show();
         // TODO
         //((Button)dialog.findViewById(R.id.btnOK)).setOnClickListener(new ListFileActivity$$ExternalSyntheticLambda0(this, dialog));
-        ((Button)dialog.findViewById(R.id.btnCancel)).setOnClickListener(view -> dialog.dismiss());
+        dialog.findViewById(R.id.btnCancel).setOnClickListener(view -> dialog.dismiss());
     }
 
     private static final void showDeleteDialog$lambda$19$lambda$17(ListFileActivity paramListFileActivity, Dialog paramDialog, View paramView) {
@@ -623,7 +621,7 @@ public final class ListFileActivity extends BaseActivity implements ListFileAdap
                     file.delete();
             }
         }
-        ContextKt.showNotice((Context)paramListFileActivity, R.string.txt_delete_successfully);
+        ContextKt.showNotice(paramListFileActivity, R.string.txt_delete_successfully);
         paramListFileActivity.initData();
     }
 
@@ -658,17 +656,17 @@ public final class ListFileActivity extends BaseActivity implements ListFileAdap
         super.onBackPressed();
         boolean bool;
         LinearLayout linearLayout = (LinearLayout)findCachedViewById(R.id.layoutOption);
-        if (((View)linearLayout).getVisibility() == View.VISIBLE) {
+        if ((linearLayout).getVisibility() == View.VISIBLE) {
             bool = true;
         } else {
             bool = false;
         }
         if (bool) {
-            ((LinearLayout)findCachedViewById(R.id.layoutOption)).setVisibility(View.GONE);
+            findCachedViewById(R.id.layoutOption).setVisibility(View.GONE);
             ((TextView)findCachedViewById(R.id.txtTitle)).setText(this.mTitle);
-            ((ImageView)findCachedViewById(R.id.btnSelectAll)).setVisibility(View.GONE);
-            ((ImageView)findCachedViewById(R.id.btnOrder)).setVisibility(View.VISIBLE);
-            ((ImageView)findCachedViewById(R.id.btnSelect)).setVisibility(View.VISIBLE);
+            findCachedViewById(R.id.btnSelectAll).setVisibility(View.GONE);
+            findCachedViewById(R.id.btnOrder).setVisibility(View.VISIBLE);
+            findCachedViewById(R.id.btnSelect).setVisibility(View.VISIBLE);
             ListFileAdapter listFileAdapter = this.mListFileAdapter;
             if (listFileAdapter != null)
                 listFileAdapter.setSelectedMode(false);
@@ -682,9 +680,8 @@ public final class ListFileActivity extends BaseActivity implements ListFileAdap
         setContentView(R.layout.activity_list_file);
         initThemeColor();
         Utils utils = Utils.INSTANCE;
-        Context context = (Context)this;
         AdView adView = (AdView)findCachedViewById(R.id.adView);
-        utils.loadBannerAds(context, adView, AdsManager.INSTANCE.is_show_banner_ads_list_file());
+        utils.loadBannerAds(this, adView, AdsManager.INSTANCE.is_show_banner_ads_list_file());
         initData();
         initThemeView();
         handleEvents();

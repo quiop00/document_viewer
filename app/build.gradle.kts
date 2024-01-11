@@ -79,5 +79,8 @@ dependencies {
     // https://mvnrepository.com/artifact/com.github.bumptech.glide/glide
     implementation("com.github.bumptech.glide:glide:4.16.0")
 
+    // https://mvnrepository.com/artifact/com.github.barteksc/android-pdf-viewer
+    implementation("com.github.barteksc:android-pdf-viewer:2.6.0")
+
 
 }

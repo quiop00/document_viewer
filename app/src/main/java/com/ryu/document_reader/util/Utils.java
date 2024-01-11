@@ -23,6 +23,8 @@ import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.core.content.FileProvider;
+
 import com.adjust.sdk.Adjust;
 import com.adjust.sdk.AdjustAdRevenue;
 import com.google.android.gms.ads.AdLoader;
@@ -535,5 +537,15 @@ public final class Utils {
 
     public final String getEndFile(String paramString) {
         return StringsKt.endsWith(paramString, ".pdf", false, 2, null) ? ".pdf" : (StringsKt.endsWith(paramString, ".doc", false, 2, null) ? ".doc" : (StringsKt.endsWith(paramString, ".docx", false, 2, null) ? ".docx" : (StringsKt.endsWith(paramString, ".xlsx", false, 2, null) ? ".xlsx" : (StringsKt.endsWith(paramString, ".xls", false, 2, null) ? ".xls" : (StringsKt.endsWith(paramString, ".pptx", false, 2, null) ? ".pptx" : (StringsKt.endsWith(paramString, ".txt", false, 2, null) ? ".txt" : (StringsKt.endsWith(paramString, ".ppt", false, 2, null) ? ".ppt" : (StringsKt.endsWith(paramString, ".png", false, 2, null) ? ".png" : (StringsKt.endsWith(paramString, ".jpg", false, 2, null) ? ".jpg" : "")))))))));
+    }
+
+    public final void shareFile(Context paramContext, String paramString) {
+        Intrinsics.checkNotNullParameter(paramContext, "context");
+        Intrinsics.checkNotNullParameter(paramString, "path");
+        Uri uri = FileProvider.getUriForFile(paramContext, "com.ryu.document_reader.provider", new File(paramString));
+        Intent intent = Intent.createChooser(fileShareIntent(paramContext.getString(R.string.share), uri), "share..");
+        // TODO
+        //intent.setFlags(268435456);
+        paramContext.startActivity(intent);
     }
 }
