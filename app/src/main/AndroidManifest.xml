@@ -39,6 +39,30 @@
         android:theme="@style/Theme.Document_reader"
         tools:targetApi="31">
         <activity
+            android:name=".activity.viewer.WordViewerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.viewer.TextViewerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.viewer.PowerPointViewerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.viewer.PdfViewerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.viewer.ImageViewerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.viewer.ExcelViewerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.shop.ShopActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.search.SearchActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.savefile.SaveFileActivity"
             android:exported="false" />
         <activity
