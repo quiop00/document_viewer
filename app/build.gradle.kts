@@ -80,7 +80,7 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.16.0")
 
     // https://mvnrepository.com/artifact/com.github.barteksc/android-pdf-viewer
-    implementation("com.github.barteksc:android-pdf-viewer:2.6.0")
+    implementation("com.github.barteksc:android-pdf-viewer:3.2.0-beta.1")
 
 
 }
