@@ -1160,13 +1160,13 @@ public class ExcelViewerActivity extends BaseActivity implements IMainFrame {
     public void setIgnoreOriginalSize(boolean paramBoolean) {}
 
     public void setPenUnChecked() {
-        if (this.fullscreen) {
-            this.penButton.setState((short)2);
-            this.penButton.postInvalidate();
-            return;
+        if (fullscreen) {
+            penButton.setState(AImageCheckButton.UNCHECK);
+            penButton.postInvalidate();
+        } else {
+            calloutBar.setCheckState(EventConstant.APP_PEN_ID, AImageCheckButton.UNCHECK);
+            calloutBar.postInvalidate();
         }
-        this.calloutBar.setCheckState(536870939, (short)2);
-        this.calloutBar.postInvalidate();
     }
 
     public void setThumbnail(boolean paramBoolean) {
