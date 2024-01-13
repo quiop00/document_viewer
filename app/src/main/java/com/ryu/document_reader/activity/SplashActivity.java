@@ -8,6 +8,8 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -21,12 +23,19 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.core.text.HtmlCompat;
 
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 //import com.ironsource.mediationsdk.IronSource;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import com.ryu.document_reader.R;
 import com.ryu.document_reader.activity.home.BillingClientSetup;
+import com.ryu.document_reader.activity.viewer.ExcelViewerActivity;
+import com.ryu.document_reader.activity.viewer.ImageViewerActivity;
+import com.ryu.document_reader.activity.viewer.PdfViewerActivity;
+import com.ryu.document_reader.activity.viewer.PowerPointViewerActivity;
+import com.ryu.document_reader.activity.viewer.TextViewerActivity;
+import com.ryu.document_reader.activity.viewer.WordViewerActivity;
 import com.ryu.document_reader.ads.AdsManager;
 import com.ryu.document_reader.ads.AppOpenManager;
 import com.ryu.document_reader.ads.callback.AdsListener;
@@ -58,128 +67,89 @@ public final class SplashActivity extends AppCompatActivity implements AdsListen
 
     }
 
-    private final void handleEvent() {
+    private void handleEvent() {
         Dialog dialog = this.mWarningDialog;
-        if (dialog != null) {
-            TextView textView = (TextView)dialog.findViewById(R.id.btnGotoStore);
-            if (textView != null)
-                // TODO
-                textView.setOnClickListener(view -> {
-
-                });
-        }
-        dialog = this.mWarningDialog;
-        if (dialog != null) {
-            ImageView imageView = (ImageView)dialog.findViewById(R.id.btnBack);
-            if (imageView != null)
-                imageView.setOnClickListener(view -> {
-
-                });
-        }
-        dialog = this.mWarningDialog;
-        if (dialog != null) {
-            TextView textView = (TextView)dialog.findViewById(R.id.btnDoLater);
-            if (textView != null)
-                textView.setOnClickListener(view -> {
-
-                });
-        }
+        TextView txtGotoStore = dialog.findViewById(R.id.btnGotoStore);
+        if (txtGotoStore != null)
+            txtGotoStore.setOnClickListener(view -> onClickBtnGotoStore());
+        ImageView imgBack = dialog.findViewById(R.id.btnBack);
+        if (imgBack != null)
+            imgBack.setOnClickListener(view -> onClickBack());
+        TextView txtDoLater = dialog.findViewById(R.id.btnDoLater);
+        if (txtDoLater != null)
+            txtDoLater.setOnClickListener(view -> doLater(dialog));
     }
 
-    private static final void handleEvent$lambda$3(SplashActivity paramSplashActivity, View paramView) {
-        Intrinsics.checkNotNullParameter(paramSplashActivity, "this$0");
+    private void onClickBtnGotoStore() {
         try {
-            Intent intent = new Intent();
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.append("https://play.google.com/store/apps/details?id=");
-            stringBuilder.append(paramSplashActivity.getPackageName());
-            // TODO check
-            //this("android.intent.action.VIEW", Uri.parse(stringBuilder.toString()));
-            paramSplashActivity.startActivity(intent);
+            stringBuilder.append(getPackageName());
+            Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(stringBuilder.toString()));
+            startActivity(intent);
         } catch (Exception exception) {
             exception.printStackTrace();
         }
     }
 
-    private static final void handleEvent$lambda$4(SplashActivity paramSplashActivity, View paramView) {
-        Intrinsics.checkNotNullParameter(paramSplashActivity, "this$0");
-        if (paramSplashActivity.isCloseApp) {
-            paramSplashActivity.finish();
+    private void onClickBack() {
+        if (isCloseApp) {
+            finish();
         } else {
-            paramSplashActivity.showAds();
+            showAds();
         }
     }
 
-    private static final void handleEvent$lambda$5(SplashActivity paramSplashActivity, View paramView) {
-        Intrinsics.checkNotNullParameter(paramSplashActivity, "this$0");
-        Dialog dialog = paramSplashActivity.mWarningDialog;
-        if (dialog != null)
-            dialog.dismiss();
-        paramSplashActivity.showAds();
+    private void doLater(Dialog dialog) {
+        dialog.dismiss();
+        showAds();
     }
 
     private final void initData() {
-        // TODO fix
-//        openFileFromAnotherApp();
-//        FirebaseRemoteConfig firebaseRemoteConfig1 = FirebaseRemoteConfig.getInstance();
-//        Intrinsics.checkNotNullExpressionValue(firebaseRemoteConfig1, "getInstance()");
-//        this.mFirebaseRemoteConfig = firebaseRemoteConfig1;
-//        FirebaseRemoteConfigSettings firebaseRemoteConfigSettings = (new FirebaseRemoteConfigSettings.Builder()).setMinimumFetchIntervalInSeconds(10L).build();
-//        Intrinsics.checkNotNullExpressionValue(firebaseRemoteConfigSettings, "Builder()\n            .s…(10)\n            .build()");
-//        FirebaseRemoteConfig firebaseRemoteConfig3 = this.mFirebaseRemoteConfig;
-//        FirebaseRemoteConfig firebaseRemoteConfig2 = null;
-//        firebaseRemoteConfig1 = firebaseRemoteConfig3;
-//        if (firebaseRemoteConfig3 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig1 = null;
-//        }
-//        firebaseRemoteConfig1.setConfigSettingsAsync(firebaseRemoteConfigSettings);
-//        firebaseRemoteConfig3 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig1 = firebaseRemoteConfig3;
-//        if (firebaseRemoteConfig3 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig1 = null;
-//        }
-//        firebaseRemoteConfig1.setDefaultsAsync(2132082691);
-//        firebaseRemoteConfig1 = this.mFirebaseRemoteConfig;
-//        if (firebaseRemoteConfig1 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig1 = firebaseRemoteConfig2;
-//        }
-//        firebaseRemoteConfig1.fetchAndActivate().addOnCompleteListener((Activity)this, new SplashActivity$$ExternalSyntheticLambda3(this));
-//        Context context = (Context)this;
-//        if (!BillingClientSetup.isUpgraded(context)) {
-//            MobileAds.initialize(context, new SplashActivity$$ExternalSyntheticLambda4(this));
-//        } else {
-//            (new Handler(Looper.getMainLooper())).postDelayed(new SplashActivity$$ExternalSyntheticLambda5(this), 2000L);
-//        }
+        openFileFromAnotherApp();
+
+        // Initialize Firebase Remote Config
+        initFirebaseRemoteConfig();
+
+        // Initialize Mobile Ads
+        initMobileAds();
     }
 
-    private static final void initData$lambda$0(SplashActivity paramSplashActivity, Task paramTask) {
-        Intrinsics.checkNotNullParameter(paramSplashActivity, "this$0");
-        Intrinsics.checkNotNullParameter(paramTask, "it");
-        paramSplashActivity.loadDataRemoteConfig();
+    private void initFirebaseRemoteConfig() {
+        this.mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
+        this.mFirebaseRemoteConfig.setConfigSettingsAsync(
+                new FirebaseRemoteConfigSettings.Builder()
+                        .setMinimumFetchIntervalInSeconds(10L)
+                        .build()
+        );
+        this.mFirebaseRemoteConfig.setDefaultsAsync(R.xml.remote_config_defaults);
+
+        this.mFirebaseRemoteConfig.fetchAndActivate()
+                .addOnCompleteListener(this, task -> loadDataRemoteConfig());
     }
 
-    private static final void initData$lambda$1(SplashActivity paramSplashActivity, InitializationStatus paramInitializationStatus) {
-        Intrinsics.checkNotNullParameter(paramSplashActivity, "this$0");
-        Intrinsics.checkNotNullParameter(paramInitializationStatus, "it");
+    private void initMobileAds() {
+        Context context = this;
+
+        if (!BillingClientSetup.isUpgraded(context)) {
+            MobileAds.initialize(context, this::addListenerMobile);
+        } else {
+            new Handler(Looper.getMainLooper()).postDelayed(this::gotoNextScreen, 2000L);
+        }
+    }
+
+    private void addListenerMobile(InitializationStatus initializationStatus) {
+        Intrinsics.checkNotNullParameter(initializationStatus, "it");
         AppOpenManager appOpenManager = MyApplication.Companion.getAppOpenManager();
         if (appOpenManager != null)
             appOpenManager.fetchAd();
         AdsManager adsManager = AdsManager.INSTANCE;
-        Context context = paramSplashActivity.getApplicationContext();
-        Intrinsics.checkNotNullExpressionValue(context, "applicationContext");
+        Context context = getApplicationContext();
         adsManager.loadAds(context);
     }
 
-    private static final void initData$lambda$2(SplashActivity paramSplashActivity) {
-        Intrinsics.checkNotNullParameter(paramSplashActivity, "this$0");
-        paramSplashActivity.gotoNextScreen();
-    }
-
-    private final void initView() {
-        Context context = (Context)this;
+    private void initView() {
+        Context context = this;
         Dialog dialog = new Dialog(context);
         this.mWarningDialog = dialog;
         dialog.setContentView(R.layout.activity_splash);
@@ -203,288 +173,83 @@ public final class SplashActivity extends AppCompatActivity implements AdsListen
         ((ImageView)findCachedViewById(R.id.ivIconApp)).startAnimation(animation);
     }
 
-    private final void loadDataRemoteConfig() {
-        Constants constants2 = Constants.INSTANCE;
-        FirebaseRemoteConfig firebaseRemoteConfig = this.mFirebaseRemoteConfig;
-//        FirebaseRemoteConfig firebaseRemoteConfig3 = null;
-//        FirebaseRemoteConfig firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        constants2.setCURERENT_VERSION_CODE(firebaseRemoteConfig.getLong("current_version"));
-//        constants2 = Constants.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        constants2.setMINIMUM_VERSION_CODE(firebaseRemoteConfig.getLong("minimum_version"));
-//        constants2 = Constants.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        constants2.setDISTANCE_TIME_ADS_OTHER(firebaseRemoteConfig.getLong("distance_time_show_other_ads"));
-        constants2 = Constants.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        constants2.setDISTANCE_TIME_ADS_SAME(firebaseRemoteConfig.getLong("distance_time_show_same_ads"));
-//        constants2 = Constants.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        constants2.setDISTANCE_TIME_WAIT_MAX(firebaseRemoteConfig.getLong("distance_time_wait_max_ads"));
+    private void loadDataRemoteConfig() {
+        Constants constants = Constants.INSTANCE;
+
+        constants.setCURERENT_VERSION_CODE(getRemoteConfigLong("current_version"));
+        constants.setMINIMUM_VERSION_CODE(getRemoteConfigLong("minimum_version"));
+        constants.setDISTANCE_TIME_ADS_OTHER(getRemoteConfigLong("distance_time_show_other_ads"));
+        constants.setDISTANCE_TIME_ADS_SAME(getRemoteConfigLong("distance_time_show_same_ads"));
+        constants.setDISTANCE_TIME_WAIT_MAX(getRemoteConfigLong("distance_time_wait_max_ads"));
+
         AdsManager adsManager = AdsManager.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        adsManager.set_show_native_ads_home(firebaseRemoteConfig.getBoolean("is_show_native_ads_home"));
-//        adsManager = AdsManager.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        adsManager.set_show_native_ads_list_file(firebaseRemoteConfig.getBoolean("is_show_native_ads_list_file"));
-//        adsManager = AdsManager.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        adsManager.set_show_native_ads_search_file(firebaseRemoteConfig.getBoolean("is_show_native_ads_search_file"));
-//        adsManager = AdsManager.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        adsManager.set_show_native_ads_language(firebaseRemoteConfig.getBoolean("is_show_native_ads_language"));
-//        adsManager = AdsManager.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        adsManager.set_show_native_save_file(firebaseRemoteConfig.getBoolean("is_show_native_save_file"));
-//        adsManager = AdsManager.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        adsManager.set_show_native_ads_image_convert(firebaseRemoteConfig.getBoolean("is_show_native_ads_image_convert"));
-//        adsManager = AdsManager.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        adsManager.set_show_native_ads_image_list(firebaseRemoteConfig.getBoolean("is_show_native_ads_image_list"));
-//        adsManager = AdsManager.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        adsManager.set_show_banner_ads_list_file(firebaseRemoteConfig.getBoolean("is_show_banner_ads_list_file"));
-//        adsManager = AdsManager.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        adsManager.set_show_banner_ads_pdf_viewer(firebaseRemoteConfig.getBoolean("is_show_banner_ads_pdf_viewer"));
-//        adsManager = AdsManager.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        adsManager.set_show_banner_ads_office_viewer(firebaseRemoteConfig.getBoolean("is_show_banner_ads_office_viewer"));
-//        adsManager = AdsManager.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        adsManager.set_show_banner_ads_image_viewer(firebaseRemoteConfig.getBoolean("is_show_banner_ads_image_viewer"));
-//        adsManager = AdsManager.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        adsManager.set_show_inter_ads_splash(firebaseRemoteConfig.getBoolean("is_show_inter_ads_splash"));
-//        adsManager = AdsManager.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        adsManager.set_show_inter_ads_home(firebaseRemoteConfig.getBoolean("is_show_inter_ads_home"));
-//        adsManager = AdsManager.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        adsManager.set_show_inter_ads_list_file(firebaseRemoteConfig.getBoolean("is_show_inter_ads_list_file"));
-//        adsManager = AdsManager.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        adsManager.set_show_inter_ads_search_file(firebaseRemoteConfig.getBoolean("is_show_inter_ads_search_file"));
-//        adsManager = AdsManager.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        adsManager.set_show_open_ads_resume_home(firebaseRemoteConfig.getBoolean("is_show_open_ads_resume_home"));
-//        adsManager = AdsManager.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        adsManager.set_show_open_ads_resume_list_file(firebaseRemoteConfig.getBoolean("is_show_open_ads_resume_list_file"));
-//        adsManager = AdsManager.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        adsManager.set_show_open_ads_resume_search_file(firebaseRemoteConfig.getBoolean("is_show_open_ads_resume_search_file"));
-//        adsManager = AdsManager.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        adsManager.set_show_open_ads_resume_pdf_viewer(firebaseRemoteConfig.getBoolean("is_show_open_ads_resume_pdf_viewer"));
-//        adsManager = AdsManager.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        adsManager.set_show_open_ads_resume_office_viewer(firebaseRemoteConfig.getBoolean("is_show_open_ads_resume_office_viewer"));
-//        adsManager = AdsManager.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        adsManager.set_show_open_ads_resume_image_viewer(firebaseRemoteConfig.getBoolean("is_show_open_ads_resume_image_viewer"));
-//        adsManager = AdsManager.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        adsManager.set_show_open_ads_resume_language_viewer(firebaseRemoteConfig.getBoolean("is_show_open_ads_resume_language_viewer"));
-//        adsManager = AdsManager.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        adsManager.set_show_open_ads_resume_screenshot_editor(firebaseRemoteConfig.getBoolean("is_show_open_ads_resume_screenshot_editor"));
-//        adsManager = AdsManager.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        adsManager.set_show_open_ads_any_position(firebaseRemoteConfig.getBoolean("is_show_open_ads_any_position"));
-//        adsManager = AdsManager.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        adsManager.set_show_button_convert(firebaseRemoteConfig.getBoolean("is_show_button_convert"));
-//        adsManager = AdsManager.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        firebaseRemoteConfig2 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig2 = null;
-//        }
-        String str = firebaseRemoteConfig.getString("email_feedback");
-        Intrinsics.checkNotNullExpressionValue(str, "mFirebaseRemoteConfig.getString(\"email_feedback\")");
-        adsManager.setEmail_feedback(str);
-//        Constants constants1 = Constants.INSTANCE;
-//        firebaseRemoteConfig4 = this.mFirebaseRemoteConfig;
-//        FirebaseRemoteConfig firebaseRemoteConfig1 = firebaseRemoteConfig4;
-//        if (firebaseRemoteConfig4 == null) {
-//            Intrinsics.throwUninitializedPropertyAccessException("mFirebaseRemoteConfig");
-//            firebaseRemoteConfig1 = null;
-//        }
-        constants2.setMAX_TIME_AT_SPLASH(firebaseRemoteConfig.getLong("max_time_at_splash"));
-        if (5151L >= Constants.INSTANCE.getMINIMUM_VERSION_CODE()) {
-            if (5151L < Constants.INSTANCE.getCURERENT_VERSION_CODE()) {
-                TextView textView = null;
-                Dialog dialog2 = this.mWarningDialog;
-                //firebaseRemoteConfig1 = firebaseRemoteConfig3;
-                if (dialog2 != null)
-                    textView = (TextView)dialog2.findViewById(R.id.btnDoLater);
-                if (textView != null)
-                    textView.setVisibility(View.VISIBLE);
-                Dialog dialog1 = this.mWarningDialog;
-                if (dialog1 != null)
-                    dialog1.show();
-                this.isCloseApp = false;
-            } else {
-                showAds();
-            }
+        adsManager.set_show_native_ads_home(getRemoteConfigBoolean("is_show_native_ads_home"));
+        adsManager.set_show_native_ads_list_file(getRemoteConfigBoolean("is_show_native_ads_list_file"));
+        adsManager.set_show_native_ads_search_file(getRemoteConfigBoolean("is_show_native_ads_search_file"));
+        adsManager.set_show_native_ads_language(getRemoteConfigBoolean("is_show_native_ads_language"));
+        adsManager.set_show_native_save_file(getRemoteConfigBoolean("is_show_native_save_file"));
+        adsManager.set_show_native_ads_image_convert(getRemoteConfigBoolean("is_show_native_ads_image_convert"));
+        adsManager.set_show_native_ads_image_list(getRemoteConfigBoolean("is_show_native_ads_image_list"));
+        adsManager.set_show_banner_ads_list_file(getRemoteConfigBoolean("is_show_banner_ads_list_file"));
+        adsManager.set_show_banner_ads_pdf_viewer(getRemoteConfigBoolean("is_show_banner_ads_pdf_viewer"));
+        adsManager.set_show_banner_ads_office_viewer(getRemoteConfigBoolean("is_show_banner_ads_office_viewer"));
+        adsManager.set_show_banner_ads_image_viewer(getRemoteConfigBoolean("is_show_banner_ads_image_viewer"));
+        adsManager.set_show_inter_ads_splash(getRemoteConfigBoolean("is_show_inter_ads_splash"));
+        adsManager.set_show_inter_ads_home(getRemoteConfigBoolean("is_show_inter_ads_home"));
+        adsManager.set_show_inter_ads_list_file(getRemoteConfigBoolean("is_show_inter_ads_list_file"));
+        adsManager.set_show_inter_ads_search_file(getRemoteConfigBoolean("is_show_inter_ads_search_file"));
+        adsManager.set_show_open_ads_resume_home(getRemoteConfigBoolean("is_show_open_ads_resume_home"));
+        adsManager.set_show_open_ads_resume_list_file(getRemoteConfigBoolean("is_show_open_ads_resume_list_file"));
+        adsManager.set_show_open_ads_resume_search_file(getRemoteConfigBoolean("is_show_open_ads_resume_search_file"));
+        adsManager.set_show_open_ads_resume_pdf_viewer(getRemoteConfigBoolean("is_show_open_ads_resume_pdf_viewer"));
+        adsManager.set_show_open_ads_resume_office_viewer(getRemoteConfigBoolean("is_show_open_ads_resume_office_viewer"));
+        adsManager.set_show_open_ads_resume_image_viewer(getRemoteConfigBoolean("is_show_open_ads_resume_image_viewer"));
+        adsManager.set_show_open_ads_resume_language_viewer(getRemoteConfigBoolean("is_show_open_ads_resume_language_viewer"));
+        adsManager.set_show_open_ads_resume_screenshot_editor(getRemoteConfigBoolean("is_show_open_ads_resume_screenshot_editor"));
+        adsManager.set_show_open_ads_any_position(getRemoteConfigBoolean("is_show_open_ads_any_position"));
+        adsManager.set_show_button_convert(getRemoteConfigBoolean("is_show_button_convert"));
+        adsManager.setEmail_feedback(getRemoteConfigString("email_feedback"));
+
+        constants.setMAX_TIME_AT_SPLASH(getRemoteConfigLong("max_time_at_splash"));
+
+        handleVersionCheck();
+    }
+
+    private long getRemoteConfigLong(String key) {
+        return this.mFirebaseRemoteConfig.getLong(key);
+    }
+
+    private boolean getRemoteConfigBoolean(String key) {
+        return this.mFirebaseRemoteConfig.getBoolean(key);
+    }
+
+    private String getRemoteConfigString(String key) {
+        return this.mFirebaseRemoteConfig.getString(key);
+    }
+
+    private void handleVersionCheck() {
+        long currentVersionCode = Constants.INSTANCE.getCURERENT_VERSION_CODE();
+        long minimumVersionCode = Constants.INSTANCE.getMINIMUM_VERSION_CODE();
+
+        if (currentVersionCode < minimumVersionCode) {
+            showVersionWarningDialog();
         } else {
-            Dialog dialog = this.mWarningDialog;
-            if (dialog != null)
-                dialog.show();
+            showAds();
         }
     }
+
+    private void showVersionWarningDialog() {
+        Dialog warningDialog = this.mWarningDialog;
+        if (warningDialog != null) {
+            TextView doLaterButton = warningDialog.findViewById(R.id.btnDoLater);
+            if (doLaterButton != null) {
+                doLaterButton.setVisibility(View.VISIBLE);
+            }
+            warningDialog.show();
+            this.isCloseApp = false;
+        }
+    }
+
 
     private final void openFileFromAnotherApp() {
         if (getIntent() != null) {
@@ -505,47 +270,41 @@ public final class SplashActivity extends AppCompatActivity implements AdsListen
                         Utils.INSTANCE.setFileRecent(str, context);
                         if (StringsKt.endsWith(str, ".pdf", false, 2, null)) {
                             Utils.INSTANCE.setTrackEvent(context, "event_click_goto_page_pdf_viewer", "event_click_goto_page_pdf_viewer");
-                            // TODO FIX
-                            //intent = new Intent(context, PdfViewerActivity.class);
+                            intent = new Intent(context, PdfViewerActivity.class);
                             this.mIntent = intent;
                             intent.putExtra("url", str);
                         } else {
                             if (StringsKt.endsWith(str, ".doc", false, 2, null) || StringsKt.endsWith(str, ".docx", false, 2, null)) {
                                 Utils.INSTANCE.setTrackEvent(context, "event_click_goto_page_doc_viewer", "event_click_goto_page_doc_viewer");
-                                // TODO FIX
-                                //intent = new Intent(context, WordViewerActivity.class);
+                                intent = new Intent(context, WordViewerActivity.class);
                                 this.mIntent = intent;
                                 intent.putExtra("url", str);
                                 return;
                             }
                             if (StringsKt.endsWith(str, ".xlsx", false, 2, null) || StringsKt.endsWith(str, ".xls", false, 2, null)) {
                                 Utils.INSTANCE.setTrackEvent(context, "event_click_goto_page_xlsx_viewer", "event_click_goto_page_xlsx_viewer");
-                                // TODO FIX
-                                //intent = new Intent(context, ExelViewerActivity.class);
+                                intent = new Intent(context, ExcelViewerActivity.class);
                                 this.mIntent = intent;
                                 intent.putExtra("url", str);
                                 return;
                             }
                             if (StringsKt.endsWith(str, ".pptx", false, 2, null) || StringsKt.endsWith(str, ".ppt", false, 2, null)) {
                                 Utils.INSTANCE.setTrackEvent(context, "event_click_goto_page_pptx_viewer", "event_click_goto_page_pptx_viewer");
-                                // TODO FIX
-                                //intent = new Intent(context, PowerPointViewerActivity.class);
+                                intent = new Intent(context, PowerPointViewerActivity.class);
                                 this.mIntent = intent;
                                 intent.putExtra("url", str);
                                 return;
                             }
                             if (StringsKt.endsWith(str, ".png", false, 2, null) || StringsKt.endsWith(str, ".jpg", false, 2, null)) {
                                 Utils.INSTANCE.setTrackEvent(context, "event_click_goto_page_png_viewer", "event_click_goto_page_png_viewer");
-                                // TODO FIX
-                                //intent = new Intent(context, ImageViewerActivity.class);
+                                intent = new Intent(context, ImageViewerActivity.class);
                                 this.mIntent = intent;
                                 intent.putExtra("url", str);
                                 return;
                             }
                             if (StringsKt.endsWith(str, ".txt", false, 2, null)) {
                                 Utils.INSTANCE.setTrackEvent(context, "event_click_goto_page_txt_viewer", "event_click_goto_page_txt_viewer");
-                                // TODO FIX
-                                //intent = new Intent(context, TextViewerActivity.class);
+                                intent = new Intent(context, TextViewerActivity.class);
                                 this.mIntent = intent;
                                 intent.putExtra("url", str);
                             }
@@ -556,9 +315,9 @@ public final class SplashActivity extends AppCompatActivity implements AdsListen
         }
     }
 
-    private final void showAds() {
-        if (!BillingClientSetup.isUpgraded((Context)this) && AdsManager.INSTANCE.is_show_inter_ads_splash()) {
-            AdsManager.INSTANCE.showAds((Activity)this, this);
+    private void showAds() {
+        if (!BillingClientSetup.isUpgraded(this) && AdsManager.INSTANCE.is_show_inter_ads_splash()) {
+            AdsManager.INSTANCE.showAds(this, this);
         } else {
             gotoNextScreen();
         }
@@ -568,19 +327,18 @@ public final class SplashActivity extends AppCompatActivity implements AdsListen
         this.findViewCache.clear();
     }
 
-    public View findCachedViewById(int paramInt) {
-        Map<Integer, View> map = this.findViewCache;
-        View view2 = map.get(paramInt);
-        View view1 = view2;
-        if (view2 == null) {
-            view1 = findViewById(paramInt);
-            if (view1 != null) {
-                map.put(paramInt, view1);
-            } else {
-                view1 = null;
+    public View findCachedViewById(int viewId) {
+        View cachedView = findViewCache.get(viewId);
+
+        if (cachedView == null) {
+            cachedView = findViewById(viewId);
+
+            if (cachedView != null) {
+                findViewCache.put(viewId, cachedView);
             }
         }
-        return view1;
+
+        return cachedView;
     }
 
     public void onAdDismissed() {
@@ -589,22 +347,15 @@ public final class SplashActivity extends AppCompatActivity implements AdsListen
 
     protected void onCreate(Bundle paramBundle) {
         super.onCreate(paramBundle);
-        Utils utils1 = Utils.INSTANCE;
-        Context context1 = (Context)this;
-        utils1.setLanguageForApp(context1);
+        Utils utils = Utils.INSTANCE;
+        Context context = this;
+        utils.setLanguageForApp(context);
         setContentView(R.layout.activity_splash);
-        Utils utils3 = Utils.INSTANCE;
-        Utils utils2 = Utils.INSTANCE;
-        Context context2 = getApplicationContext();
-        Intrinsics.checkNotNullExpressionValue(context2, "applicationContext");
-        utils3.setNumberBackApp(context1, utils2.getNumberBackApp(context2) + 1);
-        utils2 = Utils.INSTANCE;
-        context2 = getApplicationContext();
-        Intrinsics.checkNotNullExpressionValue(context2, "applicationContext");
-        int i = utils2.getTheme(context2);
+        utils.setNumberBackApp(context, utils.getNumberBackApp(context) + 1);
+        int i = utils.getTheme(context);
         Theme = i;
         if (i == 1) {
-            ((ConstraintLayout)findCachedViewById(R.id.layoutMain)).setBackgroundColor(ContextCompat.getColor(context1, R.color.colorBlackAltLight));
+            findCachedViewById(R.id.layoutMain).setBackgroundColor(ContextCompat.getColor(context, R.color.colorBlackAltLight));
             ((TextView)findCachedViewById(R.id.txtTitle)).setTextColor(-1);
         }
         initData();

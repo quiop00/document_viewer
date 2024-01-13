@@ -10,8 +10,6 @@ import com.adjust.sdk.AdjustConfig;
 import com.adjust.sdk.LogLevel;
 import com.ryu.document_reader.ads.AppOpenManager;
 
-import kotlin.jvm.internal.Intrinsics;
-
 public class MyApplication extends Application {
     public static final Companion Companion = new Companion();
 
@@ -26,7 +24,7 @@ public class MyApplication extends Application {
         try {
             AppOpenManager appOpenManager = new AppOpenManager(this);
             companion.setAppOpenManager(appOpenManager);
-            AdjustConfig adjustConfig = new AdjustConfig((Context)this, "orfbb28riby8", "production");
+            AdjustConfig adjustConfig = new AdjustConfig(this, "orfbb28riby8", "production");
             adjustConfig.setLogLevel(LogLevel.VERBOSE);
             adjustConfig.setPreinstallTrackingEnabled(true);
             Adjust.onCreate(adjustConfig);
@@ -38,68 +36,54 @@ public class MyApplication extends Application {
     }
 
     private static final class AdjustLifecycleCallbacks implements Application.ActivityLifecycleCallbacks {
-        public void onActivityCreated(Activity param1Activity, Bundle param1Bundle) {
-            Intrinsics.checkNotNullParameter(param1Activity, "p0");
+        public void onActivityCreated(Activity activity, Bundle param1Bundle) {
         }
 
-        public void onActivityDestroyed(Activity param1Activity) {
-            Intrinsics.checkNotNullParameter(param1Activity, "p0");
+        public void onActivityDestroyed(Activity activity) {
         }
 
-        public void onActivityPaused(Activity param1Activity) {
-            Intrinsics.checkNotNullParameter(param1Activity, "activity");
+        public void onActivityPaused(Activity activity) {
             Adjust.onPause();
         }
 
-        public void onActivityResumed(Activity param1Activity) {
-            Intrinsics.checkNotNullParameter(param1Activity, "activity");
+        public void onActivityResumed(Activity activity) {
             Adjust.onResume();
         }
 
-        public void onActivitySaveInstanceState(Activity param1Activity, Bundle param1Bundle) {
-            Intrinsics.checkNotNullParameter(param1Activity, "p0");
-            Intrinsics.checkNotNullParameter(param1Bundle, "p1");
+        public void onActivitySaveInstanceState(Activity activity, Bundle param1Bundle) {
         }
 
-        public void onActivityStarted(Activity param1Activity) {
-            Intrinsics.checkNotNullParameter(param1Activity, "p0");
+        public void onActivityStarted(Activity activity) {
         }
 
-        public void onActivityStopped(Activity param1Activity) {
-            Intrinsics.checkNotNullParameter(param1Activity, "p0");
+        public void onActivityStopped(Activity activity) {
         }
     }
 
     public static final class Companion {
         private Companion() {}
 
-        public final AppOpenManager getAppOpenManager() {
-            AppOpenManager appOpenManager = MyApplication.appOpenManager;
-            if (appOpenManager != null)
-                return appOpenManager;
-            Intrinsics.throwUninitializedPropertyAccessException("appOpenManager");
-            return null;
+        public AppOpenManager getAppOpenManager() {
+            return MyApplication.appOpenManager;
         }
 
-        public final MyApplication getContext() {
+        public MyApplication getContext() {
             if (getInstance() == null)
                 return new MyApplication();
             MyApplication myApplication = getInstance();
-            Intrinsics.checkNotNull(myApplication);
             return myApplication;
         }
 
-        public final MyApplication getInstance() {
+        public MyApplication getInstance() {
             return MyApplication.instance;
         }
 
-        public final void setAppOpenManager(AppOpenManager param1AppOpenManager) {
-            Intrinsics.checkNotNullParameter(param1AppOpenManager, "<set-?>");
-            MyApplication.appOpenManager = param1AppOpenManager;
+        public void setAppOpenManager(AppOpenManager appOpenManager) {
+            MyApplication.appOpenManager = appOpenManager;
         }
 
-        public final void setInstance(MyApplication param1MyApplication) {
-            MyApplication.instance = param1MyApplication;
+        public void setInstance(MyApplication myApplication) {
+            MyApplication.instance = myApplication;
         }
     }
 }
